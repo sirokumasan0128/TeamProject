@@ -13,10 +13,60 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="ソース ファイル\Actor.cpp">
+      <UniqueIdentifier>{de666fe2-6530-4fd9-8fc5-1cbe4129ee6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Actor.h">
+      <UniqueIdentifier>{bd4885d9-b818-4460-8c70-2feb16628220}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Stage.h">
+      <UniqueIdentifier>{2ce8cba7-8ca9-4521-8a26-e268799d1265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Stage.cpp">
+      <UniqueIdentifier>{436c0287-7eb3-47b1-b10a-4a5109107b6f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Item.cpp">
+      <UniqueIdentifier>{8040e994-066c-4fe5-83c3-3109380d7ed9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Item.h">
+      <UniqueIdentifier>{ccb5827f-ef3e-4c26-9c1e-35a64eb11283}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Utility">
+      <UniqueIdentifier>{6c2eaa34-bef7-41e0-ab63-288fd4769497}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Utility">
+      <UniqueIdentifier>{1e5850dd-7b39-480d-a10d-9e6432e08fe0}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
+    <ClCompile Include="Player.cpp">
+      <Filter>ソース ファイル\Actor.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>ソース ファイル</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>ソース ファイル\Stage.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="KeyInput.cpp">
+      <Filter>ソース ファイル\Utility</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Player.h">
+      <Filter>ヘッダー ファイル\Actor.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
+      <Filter>ヘッダー ファイル</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>ヘッダー ファイル\Stage.h</Filter>
+    </ClInclude>
+    <ClInclude Include="KeyInput.h">
+      <Filter>ヘッダー ファイル\Utility</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
