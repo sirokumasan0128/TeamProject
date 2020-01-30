@@ -10,8 +10,8 @@ int WinMain(
 {
 	const char TITLE[] = "01_step";
 
-	const int WinHeight = 400;
-	const int WinWidth = 600;
+	const int WinHeight = 1080;
+	const int WinWidth = 1920;
 
 	//ウィンドウモードに設定
 	ChangeWindowMode(TRUE);
@@ -30,7 +30,7 @@ int WinMain(
 	SetWindowSizeExtendRate(1.0);
 
 	//画面の背景色を設定
-	SetBackgroundColor(0xEF, 0xFF, 0xEF);
+	SetBackgroundColor(0, 0, 0);
 
 	//DXライブラリの初期化
 	if (DxLib_Init() == -1)
