@@ -32,21 +32,11 @@ void Stage1::Stage1_MapDate()
 	{
 		for (int w = 0;w < MAP_WIDTH;w++)
 		{
-			if (Stage1_MapInfo_Layer2[h][w] == 1)
+			if (Stage1_MapInfo_Layer3[h][w] == 1)
 			{
 				//下にレイヤー2用のマップチップの描画を入れる
 			}
 		}
 	}
 
-	for (int h = 0;h < MAP_HEIGHT;h++)
-	{
-		for (int w = 0;w < MAP_WIDTH;w++)
-		{
-			if (Stage1_MapInfo_Layer3[h][w] == 1)
-			{
-				//下にレイヤー3用のマップチップ描画を入れる
-			}
-		}
-	}
 }
