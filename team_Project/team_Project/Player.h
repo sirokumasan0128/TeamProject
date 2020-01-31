@@ -27,4 +27,9 @@ public:
 
 	void Draw();//プレイヤーの描画用
 
+	void SetPlayerPosX(int PosX) { this->pos_X = pos_X; }
+	int GetPlayeerPosX() { return pos_X; }
+	void SetPlayerPosY(int PosX) { this->pos_Y = pos_Y; }
+	int GetPlayerPosY() { return pos_Y; }
+
 };

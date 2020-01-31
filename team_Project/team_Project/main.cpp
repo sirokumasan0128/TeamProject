@@ -1,4 +1,14 @@
 #include "DxLib.h"
+//シーン系
+#include"Title.h"
+#include"Stage1.h"
+
+//キャラクタ系
+#include"Player.h"
+
+//入力係
+#include"KeyInput.h"
+//#include""
 
 int WinMain(
 	_In_ HINSTANCE hInstance,
@@ -32,19 +42,61 @@ int WinMain(
 	//画面の背景色を設定
 	SetBackgroundColor(0, 0, 0);
 
+	enum Scene {
+		TITLE_SCENE,
+		STAGE1_SCENE,
+		END_SCENE,
+	};
+
+	Scene scene = TITLE_SCENE;
+
+	Title title;
+	Stage1 stage1;
+	KeyInput keyInput;
+
 	//DXライブラリの初期化
 	if (DxLib_Init() == -1)
 	{
 		//エラーが出たらマイナス値を返して終了
 		return -1;
 	}
+	switch (scene)
+	{
+	case TITLE_SCENE:
+		title.Title_Init();
+		if (title.GetIsGame_Start() == true)
+		{
+			scene = STAGE1_SCENE;
+		}
+		break;
+	case STAGE1_SCENE:
+		break;
+	}
+
 
 	//永久ループを抜ける処理
 	while (1)//簡単なループ処理
 	{
 
+		ClearDrawScreen();
+		
+		switch (scene)
+		{
+		case TITLE_SCENE:
+			title.Title_Update();
+			title.Title_Draw();
+			if (title.GetIsGame_Start() == true)
+			{
+				scene = STAGE1_SCENE;
+			}
+			break;
+		case STAGE1_SCENE:
+			stage1.Stage1_MapDate();
+			break;
+		}
 
 
+		ScreenFlip();
 		WaitTimer(20);//20ミリ秒
 		if (ProcessMessage() == -1) break;//WindowsAPIのエラー処理
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1)break;//DxLibの入力処理

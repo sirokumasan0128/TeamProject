@@ -19,12 +19,6 @@
     <Filter Include="ヘッダー ファイル\Actor.h">
       <UniqueIdentifier>{bd4885d9-b818-4460-8c70-2feb16628220}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダー ファイル\Stage.h">
-      <UniqueIdentifier>{2ce8cba7-8ca9-4521-8a26-e268799d1265}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Stage.cpp">
-      <UniqueIdentifier>{436c0287-7eb3-47b1-b10a-4a5109107b6f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="ソース ファイル\Item.cpp">
       <UniqueIdentifier>{8040e994-066c-4fe5-83c3-3109380d7ed9}</UniqueIdentifier>
     </Filter>
@@ -37,6 +31,12 @@
     <Filter Include="ソース ファイル\Utility">
       <UniqueIdentifier>{1e5850dd-7b39-480d-a10d-9e6432e08fe0}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Scene.h">
+      <UniqueIdentifier>{2ce8cba7-8ca9-4521-8a26-e268799d1265}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene.cpp">
+      <UniqueIdentifier>{436c0287-7eb3-47b1-b10a-4a5109107b6f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -45,13 +45,16 @@
     <ClCompile Include="Player.cpp">
       <Filter>ソース ファイル\Actor.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Title.cpp">
-      <Filter>ソース ファイル</Filter>
-    </ClCompile>
     <ClCompile Include="Stage1.cpp">
-      <Filter>ソース ファイル\Stage.cpp</Filter>
+      <Filter>ソース ファイル\Scene.cpp</Filter>
     </ClCompile>
     <ClCompile Include="KeyInput.cpp">
+      <Filter>ソース ファイル\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>ソース ファイル\Scene.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
       <Filter>ソース ファイル\Utility</Filter>
     </ClCompile>
   </ItemGroup>
@@ -59,13 +62,16 @@
     <ClInclude Include="Player.h">
       <Filter>ヘッダー ファイル\Actor.h</Filter>
     </ClInclude>
-    <ClInclude Include="Title.h">
-      <Filter>ヘッダー ファイル</Filter>
-    </ClInclude>
     <ClInclude Include="Stage1.h">
-      <Filter>ヘッダー ファイル\Stage.h</Filter>
+      <Filter>ヘッダー ファイル\Scene.h</Filter>
     </ClInclude>
     <ClInclude Include="KeyInput.h">
+      <Filter>ヘッダー ファイル\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
+      <Filter>ヘッダー ファイル\Scene.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
       <Filter>ヘッダー ファイル\Utility</Filter>
     </ClInclude>
   </ItemGroup>
