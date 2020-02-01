@@ -127,14 +127,18 @@
     <ClCompile Include="KeyInput.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Stage1.cpp" />
+    <ClCompile Include="Stage1_1.cpp" />
+    <ClCompile Include="Stage1_2.cpp" />
+    <ClCompile Include="Stage1_3.cpp" />
     <ClCompile Include="Title.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Collision.h" />
     <ClInclude Include="KeyInput.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Stage1.h" />
+    <ClInclude Include="Stage1_1.h" />
+    <ClInclude Include="Stage1_2.h" />
+    <ClInclude Include="Stage1_3.h" />
     <ClInclude Include="Title.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

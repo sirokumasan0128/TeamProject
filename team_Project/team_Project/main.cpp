@@ -1,7 +1,9 @@
 #include "DxLib.h"
 //シーン系
 #include"Title.h"
-#include"Stage1.h"
+#include"Stage1_1.h"
+#include"Stage1_2.h"
+#include"Stage1_3.h"
 
 //キャラクタ系
 #include"Player.h"
@@ -50,9 +52,20 @@ int WinMain(
 
 	Scene scene = TITLE_SCENE;
 
+	//シーン系
 	Title title;
-	Stage1 stage1;
+	Stage1_1 stage1_1;
+	Stage1_2 stage1_2;
+	Stage1_3 stage1_3;
+
+
+	//キャラクター系
+
+	//bool系
+	bool isPlayerInit = false;
+
 	KeyInput keyInput;
+	Player player;
 
 	//DXライブラリの初期化
 	if (DxLib_Init() == -1)
@@ -60,18 +73,8 @@ int WinMain(
 		//エラーが出たらマイナス値を返して終了
 		return -1;
 	}
-	switch (scene)
-	{
-	case TITLE_SCENE:
-		title.Title_Init();
-		if (title.GetIsGame_Start() == true)
-		{
-			scene = STAGE1_SCENE;
-		}
-		break;
-	case STAGE1_SCENE:
-		break;
-	}
+	title.Title_Init();
+	//player.Init();
 
 
 	//永久ループを抜ける処理
@@ -91,12 +94,22 @@ int WinMain(
 			}
 			break;
 		case STAGE1_SCENE:
-			stage1.Stage1_MapDate();
+			if (title.GetIsPlayer_Init() == true&&isPlayerInit == false)
+			{
+				player.Init();
+				isPlayerInit = true;
+			}
+			player.Update();
+			stage1_1.Stage1_1_Map_Draw();
+			stage1_2.Stage1_2_Map_Draw();
+			player.Draw();
+			stage1_3.Stage1_3_Map_Draw();
+			stage1_2.Stage1_2_Map_Hit();
 			break;
 		}
 
 
-		ScreenFlip();
+		ScreenFlip(); 
 		WaitTimer(20);//20ミリ秒
 		if (ProcessMessage() == -1) break;//WindowsAPIのエラー処理
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1)break;//DxLibの入力処理

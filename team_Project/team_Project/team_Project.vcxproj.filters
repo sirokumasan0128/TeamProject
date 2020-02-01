@@ -37,6 +37,12 @@
     <Filter Include="ソース ファイル\Scene.cpp">
       <UniqueIdentifier>{436c0287-7eb3-47b1-b10a-4a5109107b6f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ヘッダー ファイル\Scene.h\Stage1">
+      <UniqueIdentifier>{905d5be5-5dee-4c6d-bab3-3e9bcb340263}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Scene.cpp\Stage1.cpp">
+      <UniqueIdentifier>{7722efe1-48d4-4e7a-adfb-6e050d2bef3c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -44,9 +50,6 @@
     </ClCompile>
     <ClCompile Include="Player.cpp">
       <Filter>ソース ファイル\Actor.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Stage1.cpp">
-      <Filter>ソース ファイル\Scene.cpp</Filter>
     </ClCompile>
     <ClCompile Include="KeyInput.cpp">
       <Filter>ソース ファイル\Utility</Filter>
@@ -57,13 +60,19 @@
     <ClCompile Include="Collision.cpp">
       <Filter>ソース ファイル\Utility</Filter>
     </ClCompile>
+    <ClCompile Include="Stage1_1.cpp">
+      <Filter>ソース ファイル\Scene.cpp\Stage1.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1_2.cpp">
+      <Filter>ソース ファイル\Scene.cpp\Stage1.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1_3.cpp">
+      <Filter>ソース ファイル\Scene.cpp\Stage1.cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
       <Filter>ヘッダー ファイル\Actor.h</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage1.h">
-      <Filter>ヘッダー ファイル\Scene.h</Filter>
     </ClInclude>
     <ClInclude Include="KeyInput.h">
       <Filter>ヘッダー ファイル\Utility</Filter>
@@ -73,6 +82,15 @@
     </ClInclude>
     <ClInclude Include="Collision.h">
       <Filter>ヘッダー ファイル\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1_1.h">
+      <Filter>ヘッダー ファイル\Scene.h\Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1_3.h">
+      <Filter>ヘッダー ファイル\Scene.h\Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1_2.h">
+      <Filter>ヘッダー ファイル\Scene.h\Stage1</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

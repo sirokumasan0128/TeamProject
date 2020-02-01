@@ -16,5 +16,4 @@ void KeyInput::update()
 bool KeyInput::InputKeyTrigger(int key)
 {
 	return (currentkey[key] == 1 && oldkey[key] == 0);
-
 }

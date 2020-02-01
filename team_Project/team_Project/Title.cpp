@@ -10,29 +10,17 @@ void Title::Title_Init()
 
 }
 
+
 void Title::Title_Update()
 {
 	keyInput.update();
 
-	//if (CheckHitKey(KEY_INPUT_SPACE) == 1)
-	//{
-	//	isGame_Start = true;
-	//}
-
-	//KeyInput keyInput;
-
 	if (keyInput.InputKeyTrigger(KEY_INPUT_SPACE))
 	{
-
 		isGame_Start = true;
-
+		isPlayer_Init = true;
 	}
 
-	//if (key[KEY_INPUT_SPACE] == 1)
-	//{
-	//	isGame_Start = true;
-	//}
-	
 }
 
 void Title::Title_Draw()
