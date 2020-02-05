@@ -5,7 +5,7 @@
 #define MAP_HEIGHT 34
 #define BLOCK_SIZE 32
 
-class Stage1_2
+class Stage1_2:public Base_Scene
 {
 private:
 
@@ -55,11 +55,18 @@ private:
 	};
 
 public:
-	void Stage1_2_Map_Draw();//マップチップの描画関係
+
+	Stage1_2();
+	~Stage1_2();
+
+	void Update();
+
+	void Draw();
 
 	void Stage1_2_Map_Hit();//マップとプレイヤーの当たり判定
 
-	//void SetBlockPos(int Block_Position) { this->Block_Position = Block_Position; }
-	//int GetBlockPos() { return Block_Position; }
+
+	void SetBlockPos(int Block_Position) { this->Block_Position = Block_Position; }
+	int GetBlockPos() { return Block_Position; }
 
 };

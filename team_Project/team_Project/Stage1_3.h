@@ -1,9 +1,11 @@
 #pragma once
+
+
 #define MAP_WIDTH 60
 #define MAP_HEIGHT 34
 #define BLOCK_SIZE 32
 
-class Stage1_3
+class Stage1_3:public Base_Scene
 {
 private:
 
@@ -52,5 +54,11 @@ private:
 	};
 
 public:
-	void Stage1_3_Map_Draw();
+
+	Stage1_3();
+	~Stage1_3();
+
+	void Update();
+	void Draw();
+
 };

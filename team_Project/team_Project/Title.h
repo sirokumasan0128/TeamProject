@@ -1,9 +1,10 @@
 #pragma once
 #include<string>
+#include"Base_Scene.h"
 #include"KeyInput.h"
 
 
-class Title
+class Title:public Base_Scene
 {
 private:
 
@@ -13,11 +14,13 @@ private:
 		 isPlayer_Init;//ステージ1初期化フラグ
 public:
 
-	void Title_Init();
+	Title();
+	~Title();
 
-	void Title_Update();
 
-	void Title_Draw();
+	void Update();
+
+	void Draw();
 
 	void SetIsGame_Start(bool isGame_Start) { this->isGame_Start = isGame_Start; }
 	bool GetIsGame_Start() { return isGame_Start; }

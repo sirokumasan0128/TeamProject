@@ -43,6 +43,12 @@
     <Filter Include="ソース ファイル\Scene.cpp\Stage1.cpp">
       <UniqueIdentifier>{7722efe1-48d4-4e7a-adfb-6e050d2bef3c}</UniqueIdentifier>
     </Filter>
+    <Filter Include="ソース ファイル\Scene.cpp\Title.cpp">
+      <UniqueIdentifier>{6ba43448-afa4-4d91-8416-344da8786a2b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene.h\Title.h">
+      <UniqueIdentifier>{e6a0fe6d-733f-4d84-9df8-336a549f901c}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -53,9 +59,6 @@
     </ClCompile>
     <ClCompile Include="KeyInput.cpp">
       <Filter>ソース ファイル\Utility</Filter>
-    </ClCompile>
-    <ClCompile Include="Title.cpp">
-      <Filter>ソース ファイル\Scene.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Collision.cpp">
       <Filter>ソース ファイル\Utility</Filter>
@@ -69,6 +72,24 @@
     <ClCompile Include="Stage1_3.cpp">
       <Filter>ソース ファイル\Scene.cpp\Stage1.cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>ソース ファイル\Scene.cpp\Stage1.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>ソース ファイル\Scene.cpp\Title.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Vector2.cpp">
+      <Filter>ソース ファイル\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Base_Actor.cpp">
+      <Filter>ソース ファイル\Actor.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Base_Scene.cpp">
+      <Filter>ソース ファイル\Scene.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Manager.cpp">
+      <Filter>ソース ファイル\Scene.cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Player.h">
@@ -76,9 +97,6 @@
     </ClInclude>
     <ClInclude Include="KeyInput.h">
       <Filter>ヘッダー ファイル\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Title.h">
-      <Filter>ヘッダー ファイル\Scene.h</Filter>
     </ClInclude>
     <ClInclude Include="Collision.h">
       <Filter>ヘッダー ファイル\Utility</Filter>
@@ -91,6 +109,24 @@
     </ClInclude>
     <ClInclude Include="Stage1_2.h">
       <Filter>ヘッダー ファイル\Scene.h\Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>ヘッダー ファイル\Scene.h\Stage1</Filter>
+    </ClInclude>
+    <ClInclude Include="Title.h">
+      <Filter>ヘッダー ファイル\Scene.h\Title.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Vector2.h">
+      <Filter>ヘッダー ファイル\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Base_Actor.h">
+      <Filter>ヘッダー ファイル\Actor.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Base_Scene.h">
+      <Filter>ヘッダー ファイル\Scene.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene_Manager.h">
+      <Filter>ヘッダー ファイル\Scene.h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

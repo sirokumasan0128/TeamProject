@@ -23,17 +23,18 @@ private:
 		 isDead;//プレイヤーの死亡フラグ
 
 public:
-
+	Player();
 	void Init();//プレイヤー用の初期化用
 
 	void Update();//プレイヤーの移動用
 
 	void Draw();//プレイヤーの描画用
 
-	void SetPlayerPosX(int PosX) { this->pos_X = pos_X; }
+	void SetPlayerPosX(int pos_X) { this->pos_X = pos_X; }
 	int GetPlayerPosX() { return pos_X; }
-	void SetPlayerPosY(int PosX) { this->pos_Y = pos_Y; }
+	void SetPlayerPosY(int pos_Y) { this->pos_Y = pos_Y; }
 	int GetPlayerPosY() { return pos_Y; }
+
 	void SetPlayerVelocityX(int velocity_X) { this->velocity_X = velocity_X; }
 	int GetPlayerVelocityX() { return velocity_X; }
 	void SetPlayerVelocityY(int velocity_Y) { this->velocity_Y = velocity_Y; }
