@@ -1,4 +1,6 @@
 #include "DxLib.h"
+#include "Scene_Manager.h"
+#include "Base_Scene.h"
 //シーン系
 #include"Title.h"
 #include"Stage1_1.h"
@@ -44,19 +46,24 @@ int WinMain(
 	//画面の背景色を設定
 	SetBackgroundColor(0, 0, 0);
 
-	enum Scene {
-		TITLE_SCENE,
-		STAGE1_SCENE,
-		END_SCENE,
-	};
+	Scene_Manager* scene_Manager;
+	scene_Manager->Change_Scene(scene_Manager->TITLE);
 
-	Scene scene = TITLE_SCENE;
+	//enum Scene {
+	//	TITLE_SCENE,
+	//	STAGE1_SCENE,
+	//	END_SCENE,
+	//};
 
-	//シーン系
-	Title title;
-	Stage1_1 stage1_1;
-	Stage1_2 stage1_2;
-	Stage1_3 stage1_3;
+	//Scene scene = TITLE_SCENE;
+
+	//Player player;
+
+	////シーン系
+	//Title title;
+	//Stage1_1 stage1_1;
+	//Stage1_2 stage1_2;
+	//Stage1_3 stage1_3;
 
 
 	//キャラクター系
@@ -65,7 +72,6 @@ int WinMain(
 	bool isPlayerInit = false;
 
 	KeyInput keyInput;
-	Player player;
 
 	//DXライブラリの初期化
 	if (DxLib_Init() == -1)
@@ -73,8 +79,6 @@ int WinMain(
 		//エラーが出たらマイナス値を返して終了
 		return -1;
 	}
-	title.Title_Init();
-	//player.Init();
 
 
 	//永久ループを抜ける処理
@@ -82,31 +86,37 @@ int WinMain(
 	{
 
 		ClearDrawScreen();
-		
-		switch (scene)
-		{
-		case TITLE_SCENE:
-			title.Title_Update();
-			title.Title_Draw();
-			if (title.GetIsGame_Start() == true)
-			{
-				scene = STAGE1_SCENE;
-			}
-			break;
-		case STAGE1_SCENE:
-			if (title.GetIsPlayer_Init() == true&&isPlayerInit == false)
-			{
-				player.Init();
-				isPlayerInit = true;
-			}
-			player.Update();
-			stage1_1.Stage1_1_Map_Draw();
-			stage1_2.Stage1_2_Map_Draw();
-			player.Draw();
-			stage1_3.Stage1_3_Map_Draw();
-			stage1_2.Stage1_2_Map_Hit();
-			break;
-		}
+
+		scene_Manager->Update();
+		scene_Manager->Draw();
+
+		//
+		//switch (scene)
+		//{
+		//case TITLE_SCENE:
+		//	title.Title_Update();
+		//	title.Title_Draw();
+		//	if (title.GetIsGame_Start() == true)
+		//	{
+		//		scene = STAGE1_SCENE;
+		//	}
+		//	break;
+		//case STAGE1_SCENE:
+		//	if (title.GetIsPlayer_Init() == true&&isPlayerInit == false)
+		//	{
+		//		
+		//		player.Init();
+		//		isPlayerInit = true;
+
+		//	}
+		//	player.Update();
+		//	stage1_1.Stage1_1_Map_Draw();
+		//	stage1_2.Stage1_2_Map_Draw();
+		//	player.Draw();
+		//	stage1_3.Stage1_3_Map_Draw();
+		//	stage1_2.Stage1_2_Map_Hit();
+		//	break;
+		//}
 
 
 		ScreenFlip(); 

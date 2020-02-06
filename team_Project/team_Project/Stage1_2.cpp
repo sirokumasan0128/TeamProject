@@ -1,5 +1,6 @@
 #include<DxLib.h>
 #include<iostream>
+#include"Scene_Manager.h"
 #include<vector>
 #include"Stage1_2.h"
 #include"Player.h"
@@ -7,10 +8,19 @@
 
 using namespace std;
 
-void Stage1_2::Stage1_2_Map_Draw()
+Stage1_2::Stage1_2()
 {
 
-	Player player;
+}
+
+void Stage1_2::Update()
+{
+
+}
+
+void Stage1_2::Draw()
+{
+	Player player1;
 	Collision collision;
 
 	//ステージ1のテクスチャ用の変数(レイヤー3)
@@ -31,7 +41,9 @@ void Stage1_2::Stage1_2_Map_Draw()
 		}
 	}
 
+
 }
+
 
 void Stage1_2::Stage1_2_Map_Hit()
 {
@@ -57,5 +69,10 @@ void Stage1_2::Stage1_2_Map_Hit()
 		}
 	}
 
+
+}
+
+Stage1_2::~Stage1_2()
+{
 
 }

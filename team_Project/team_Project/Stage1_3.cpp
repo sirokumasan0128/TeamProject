@@ -1,7 +1,21 @@
 #include<DxLib.h>
+#include<iostream>
+#include"Scene_Manager.h"
 #include"Stage1_3.h"
 
-void Stage1_3::Stage1_3_Map_Draw()
+using namespace std;
+
+Stage1_3::Stage1_3()
+{
+
+}
+
+void Stage1_3::Update()
+{
+
+}
+
+void Stage1_3::Draw()
 {
 	//ステージ1のテクスチャ用の変数(レイヤー3)
 	ground_Block3 = LoadGraph("ground_Block_Sample3.png");
@@ -17,5 +31,10 @@ void Stage1_3::Stage1_3_Map_Draw()
 			}
 		}
 	}
+
+}
+
+Stage1_3::~Stage1_3()
+{
 
 }

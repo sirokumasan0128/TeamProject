@@ -1,32 +1,38 @@
 #include<DxLib.h>
+#include"Scene_Manager.h"
 #include"Title.h"
 
 using namespace std;
 
-void Title::Title_Init()
+Title::Title()
+	:title_Tex(0),isGame_Start(false)
 {
-	
-	isGame_Start = false;
-
+	title_Tex = LoadGraph("");
 }
 
 
-void Title::Title_Update()
+
+void Title::Update()
 {
 	keyInput.update();
+	Scene_Manager* scene_Manager;
 
 	if (keyInput.InputKeyTrigger(KEY_INPUT_SPACE))
 	{
-		isGame_Start = true;
-		isPlayer_Init = true;
+		scene_Manager->Change_Scene(scene_Manager->STAGE1);
 	}
 
 }
 
-void Title::Title_Draw()
+void Title::Draw()
 {
 
 	title_Tex = LoadGraph("title_Sample.png");
 	DrawGraph(0,0,title_Tex,TRUE);//タイトル画面の表示
+
+}
+
+Title::~Title()
+{
 
 }

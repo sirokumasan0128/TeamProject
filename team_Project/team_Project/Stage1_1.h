@@ -4,7 +4,7 @@
 #define MAP_HEIGHT 34
 #define BLOCK_SIZE 32
 
-class Stage1_1
+class Stage1_1:public Base_Scene
 {
 private:
 
@@ -52,5 +52,11 @@ private:
 	};
 
 public:
-	void Stage1_1_Map_Draw();
+
+	Stage1_1();
+	~Stage1_1();
+
+	void Update();
+	void Draw();
+
 };
