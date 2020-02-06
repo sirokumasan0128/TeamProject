@@ -1,4 +1,3 @@
-#include<iostream>
 #include "Base_Scene.h"
 
 

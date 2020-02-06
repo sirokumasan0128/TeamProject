@@ -1,9 +1,10 @@
 #pragma once
-#include"Base_Scene.h"
 #include "Stage1_1.h"
 #include "Stage1_2.h"
 #include "Stage1_3.h"
 #include "Player.h"
+
+
 
 class Stage1:public Base_Scene
 {

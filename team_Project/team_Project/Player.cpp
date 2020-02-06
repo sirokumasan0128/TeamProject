@@ -1,5 +1,6 @@
 #include<DxLib.h>
 #include<iostream>
+#include"Base_Actor.h"
 #include "Player.h"
 
 using namespace std;
@@ -61,6 +62,13 @@ void Player::Draw()
 		DrawGraph(pos_X,pos_Y,player_Tex,FALSE);
 
 		//DrawFormatString(400, 400, GetColor(255, 255, 255), "%d\n%d", pos_X, pos_Y);
+
+
+}
+
+Player::~Player()
+{
+
 
 
 }

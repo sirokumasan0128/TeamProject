@@ -3,19 +3,14 @@
 
 
 Base_Actor::Base_Actor()
-	:pos_X(0),pos_Y(0)
+	:pos_X(0),pos_Y(0),isDead(false)
 {
 
 }
 
 void Base_Actor::Update()
 {
-
-}
-
-void Base_Actor::Draw()
-{
-
+	//íÜêgÇ™ñ≥Ç¢Ç∆Ç¢ÇØÇ»Ç¢ÇÃÇ©ÅH
 }
 
 Base_Actor::~Base_Actor()

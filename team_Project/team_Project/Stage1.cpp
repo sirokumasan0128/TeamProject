@@ -1,4 +1,6 @@
 #include <DxLib.h>
+#include"Base_Scene.h"
+#include"Base_Actor.h"//‚±‚±‚ÉéŒ¾‚·‚é‚ÆPlaer.h‚ÅŒp³‚ª’Ê‚é——R‚ª•ª‚©‚ç‚ñ
 #include "Stage1.h"
 
 Stage1::Stage1()

@@ -4,7 +4,7 @@
 
 #define PLAYER_SIZE 32
 
-class Player
+class Player:public Base_Actor//Stage1.hに書かないと継承されん
 {
 	using string = std::string;
 
@@ -24,6 +24,7 @@ private:
 
 public:
 	Player();
+	~Player();
 	void Init();//プレイヤー用の初期化用
 
 	void Update();//プレイヤーの移動用

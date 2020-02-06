@@ -1,8 +1,5 @@
 #pragma once
 
-#define MAP_WIDTH 60
-#define MAP_HEIGHT 34
-#define BLOCK_SIZE 32
 
 class Stage1_1:public Base_Scene
 {
