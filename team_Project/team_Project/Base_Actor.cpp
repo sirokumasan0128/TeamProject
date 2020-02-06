@@ -8,9 +8,24 @@ Base_Actor::Base_Actor()
 
 }
 
+void Base_Actor::Init()
+{
+
+}
+
 void Base_Actor::Update()
 {
-	//íÜêgÇ™ñ≥Ç¢Ç∆Ç¢ÇØÇ»Ç¢ÇÃÇ©ÅH
+
+}
+
+void Base_Actor::Draw()
+{
+
+}
+
+void Base_Actor::Finish()
+{
+
 }
 
 Base_Actor::~Base_Actor()

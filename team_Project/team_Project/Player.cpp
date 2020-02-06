@@ -1,6 +1,5 @@
 #include<DxLib.h>
 #include<iostream>
-#include"Base_Actor.h"
 #include "Player.h"
 
 using namespace std;

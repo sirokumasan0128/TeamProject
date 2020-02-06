@@ -1,5 +1,6 @@
 #include <DxLib.h>
 #include "Scene_Manager.h"
+#include "Base_Scene.h"
 #include "Title.h"
 #include"Stage1.h"
 //#include "Stage1_1.h"

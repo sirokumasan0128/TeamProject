@@ -1,5 +1,5 @@
 #include "Vector2.h"
-#include<iostream>
+#include <cmath>
 
 Vector2::Vector2()
 	:x(0), y(0)
@@ -9,12 +9,11 @@ Vector2::Vector2()
 Vector2::Vector2(int _x, int _y)
 	: x(_x), y(_y)
 {
-
 }
 
 float Vector2::length(const Vector2& v)
 {
-	return sqrt(x*x + y * y);
+	return std::sqrt(x*x + y * y);
 }
 
 int Vector2::dot(const Vector2 & v)
@@ -77,6 +76,17 @@ const Vector2 operator *(const Vector2 & v, float s)
 	temp *= s;
 	return temp;
 }
+
+const Vector2 operator*(float s, const Vector2 & v)
+{
+	return Vector2();
+}
+
+const Vector2 operator/(const Vector2 & v, float s)
+{
+	return Vector2();
+}
+
 
 //const Vector2 operator + (float s, const Vector2 & v)
 //{

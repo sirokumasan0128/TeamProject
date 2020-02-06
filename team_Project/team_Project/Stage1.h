@@ -16,8 +16,10 @@ public:
 	Stage1();
 	~Stage1();
 
+	void Init();
 	void Update();
 	void Draw();
+	void Finish();
 
 	Player player;
 	Stage1_1 stage1_1;

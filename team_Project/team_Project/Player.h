@@ -1,6 +1,6 @@
 #pragma once
 #include<string>
-
+#include "Base_Actor.h"
 
 #define PLAYER_SIZE 32
 

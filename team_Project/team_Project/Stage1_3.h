@@ -1,9 +1,5 @@
 #pragma once
-
-
-#define MAP_WIDTH 60
-#define MAP_HEIGHT 34
-#define BLOCK_SIZE 32
+#include "Base_Scene.h"
 
 class Stage1_3:public Base_Scene
 {
@@ -58,7 +54,9 @@ public:
 	Stage1_3();
 	~Stage1_3();
 
+	void Init();
 	void Update();
 	void Draw();
+	void Finish();
 
 };

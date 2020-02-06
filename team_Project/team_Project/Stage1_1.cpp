@@ -7,6 +7,12 @@ using namespace std;
 
 Stage1_1::Stage1_1()
 {
+	ground_Block1 = LoadGraph("ground_Block_Sample.png");
+
+}
+
+void Stage1_1::Init()
+{
 
 }
 
@@ -18,7 +24,6 @@ void Stage1_1::Update()
 void Stage1_1::Draw()
 {
 	//ステージ1のテクスチャ用の変数(レイヤー1)
-	ground_Block1 = LoadGraph("ground_Block_Sample.png");
 
 	for (int h = 0;h < MAP_HEIGHT;h++)
 	{
@@ -31,6 +36,11 @@ void Stage1_1::Draw()
 			}
 		}
 	}
+
+}
+
+void Stage1_1::Finish()
+{
 
 }
 

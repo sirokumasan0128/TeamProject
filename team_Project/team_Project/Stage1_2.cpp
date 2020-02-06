@@ -10,6 +10,12 @@ using namespace std;
 
 Stage1_2::Stage1_2()
 {
+	ground_Block2 = LoadGraph("ground_Block_Sample2.png");
+
+}
+
+void Stage1_2::Init()
+{
 
 }
 
@@ -24,7 +30,6 @@ void Stage1_2::Draw()
 	Collision collision;
 
 	//ステージ1のテクスチャ用の変数(レイヤー3)
-	ground_Block2 = LoadGraph("ground_Block_Sample2.png");
 
 	for (int h = 0;h < MAP_HEIGHT;h++)
 	{
@@ -69,6 +74,11 @@ void Stage1_2::Stage1_2_Map_Hit()
 		}
 	}
 
+
+}
+
+void Stage1_2::Finish()
+{
 
 }
 
