@@ -3,7 +3,7 @@
 
 
 Base_Actor::Base_Actor()
-	:pos_X(0),pos_Y(0),isDead(false)
+	:pos_X(0),pos_Y(0),isDead(false),isHit(false)
 {
 
 }

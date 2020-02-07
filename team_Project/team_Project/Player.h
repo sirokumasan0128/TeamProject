@@ -4,7 +4,7 @@
 
 #define PLAYER_SIZE 32
 
-class Player:public Base_Actor//Stage1.hに書かないと継承されん
+class Player//:public Base_Actor//Stage1.hに書かないと継承されん
 {
 	using string = std::string;
 
@@ -23,6 +23,9 @@ private:
 		 isDead;//プレイヤーの死亡フラグ
 
 public:
+	
+	Base_Actor base_Actor;
+
 	Player();
 	~Player();
 	void Init();//プレイヤー用の初期化用
@@ -31,11 +34,13 @@ public:
 
 	void Draw();//プレイヤーの描画用
 
+	//プレイヤーの座標のアクセッサ
 	void SetPlayerPosX(int pos_X) { this->pos_X = pos_X; }
 	int GetPlayerPosX() { return pos_X; }
 	void SetPlayerPosY(int pos_Y) { this->pos_Y = pos_Y; }
 	int GetPlayerPosY() { return pos_Y; }
 
+	//プレイヤーの移動量のアクセッサ
 	void SetPlayerVelocityX(int velocity_X) { this->velocity_X = velocity_X; }
 	int GetPlayerVelocityX() { return velocity_X; }
 	void SetPlayerVelocityY(int velocity_Y) { this->velocity_Y = velocity_Y; }

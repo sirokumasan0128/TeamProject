@@ -37,6 +37,11 @@ void Scene_Manager::Change_Scene(Scene scene)
 
 }
 
+void Scene_Manager::Init()
+{
+	m_pScene_1->Init();
+}
+
 void Scene_Manager::Update()
 {
 
@@ -46,4 +51,9 @@ void Scene_Manager::Update()
 void Scene_Manager::Draw()
 {
 	m_pScene_1->Draw();
+}
+
+void Scene_Manager::Finish()
+{
+	m_pScene_1->Finish();
 }

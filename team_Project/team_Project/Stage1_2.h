@@ -1,6 +1,9 @@
 #pragma once
 #include<vector>
 #include "Base_Scene.h"
+#include "Player.h"
+#include"Collision.h"
+
 
 class Stage1_2:public Base_Scene
 {
@@ -53,6 +56,8 @@ private:
 
 public:
 
+	Player player;
+	Collision collision;
 	Stage1_2();
 	~Stage1_2();
 
