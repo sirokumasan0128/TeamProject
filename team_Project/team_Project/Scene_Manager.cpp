@@ -3,9 +3,6 @@
 #include "Base_Scene.h"
 #include "Title.h"
 #include"Stage1.h"
-//#include "Stage1_1.h"
-//#include "Stage1_2.h"
-//#include "Stage1_3.h"
 
 Base_Scene *Scene_Manager::m_pScene_1 = nullptr;
 
