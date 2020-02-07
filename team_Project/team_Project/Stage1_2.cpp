@@ -3,13 +3,21 @@
 #include"Scene_Manager.h"
 #include<vector>
 #include"Stage1_2.h"
-#include"Player.h"
-#include"Collision.h"
+//#include"Player.h"
+//#include"Collision.h"
 
 using namespace std;
 
 Stage1_2::Stage1_2()
 {
+	//ステージ1のテクスチャ用の変数(レイヤー2)
+	ground_Block2 = LoadGraph("ground_Block_Sample2.png");
+
+}
+
+void Stage1_2::Init()
+{
+	player.Init();
 
 }
 
@@ -20,11 +28,7 @@ void Stage1_2::Update()
 
 void Stage1_2::Draw()
 {
-	Player player1;
-	Collision collision;
 
-	//ステージ1のテクスチャ用の変数(レイヤー3)
-	ground_Block2 = LoadGraph("ground_Block_Sample2.png");
 
 	for (int h = 0;h < MAP_HEIGHT;h++)
 	{
@@ -47,15 +51,17 @@ void Stage1_2::Draw()
 
 void Stage1_2::Stage1_2_Map_Hit()
 {
-	Player player;
-	Collision collision;
+	player.Update();
 	for (int h = 0;h < MAP_HEIGHT;h++)
 	{
 		for (int w = 0;w < MAP_WIDTH;w++)
 		{
-			vector<int> Block_Position = { w*BLOCK_SIZE,h*BLOCK_SIZE };
+			//vector<int> Block_Position = { w*BLOCK_SIZE,h*BLOCK_SIZE };
 
+			//値を持ってこれてるか確認用
 			DrawFormatString(400,400,GetColor(255,255,255),"%d\n%d",player.GetPlayerPosX(),player.GetPlayerPosY());
+			//緑のブロックとの当たり判定
+			//ここでブロックの上とプレイヤーの当たり判定を見てる
 			if (collision.Block_Collision(
 				w*BLOCK_SIZE, h*BLOCK_SIZE,
 				player.GetPlayerPosX(),
@@ -69,6 +75,11 @@ void Stage1_2::Stage1_2_Map_Hit()
 		}
 	}
 
+
+}
+
+void Stage1_2::Finish()
+{
 
 }
 

@@ -12,6 +12,11 @@ Title::Title()
 
 
 
+void Title::Init()
+{
+
+}
+
 void Title::Update()
 {
 	keyInput.update();
@@ -29,6 +34,11 @@ void Title::Draw()
 
 	title_Tex = LoadGraph("title_Sample.png");
 	DrawGraph(0,0,title_Tex,TRUE);//タイトル画面の表示
+
+}
+
+void Title::Finish()
+{
 
 }
 

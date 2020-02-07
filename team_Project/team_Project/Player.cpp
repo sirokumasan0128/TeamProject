@@ -6,21 +6,27 @@ using namespace std;
 
 Player::Player()
 {
-	//pos_X = 300;
-	//pos_Y = 400;
+
+
 }
 
 void Player::Init()
-{
-	pos_X = 300;
-	pos_Y = 400;
+{	
+
+	Player player;	
+	//player.base_Actor.pos_X = 300;
+	//player.base_Actor.pos_Y = 400;
+
+	pos_X = player.base_Actor.pos_X = 300;
+	pos_Y = player.base_Actor.pos_Y = 400;
+	
 	Cr = GetColor(255,255,255);
 	velocity_X = 0;
 	velocity_Y = 0;
 	player_Tex = LoadGraph("player_Sample.png");
 
-	isHit = false;
-	isDead = false;
+	isHit = player.base_Actor.isHit;
+	isDead = player.base_Actor.isDead;
 }
 
 void Player::Update()
@@ -47,9 +53,9 @@ void Player::Update()
 		velocity_Y += 5;
 	}
 
+
 	pos_X = pos_X + velocity_X;
 	pos_Y = pos_Y + velocity_Y;
-
 
 }
 
@@ -61,6 +67,13 @@ void Player::Draw()
 		DrawGraph(pos_X,pos_Y,player_Tex,FALSE);
 
 		//DrawFormatString(400, 400, GetColor(255, 255, 255), "%d\n%d", pos_X, pos_Y);
+
+
+}
+
+Player::~Player()
+{
+
 
 
 }

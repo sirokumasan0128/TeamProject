@@ -17,10 +17,10 @@ public:
 	Title();
 	~Title();
 
-
+	void Init();
 	void Update();
-
 	void Draw();
+	void Finish();
 
 	void SetIsGame_Start(bool isGame_Start) { this->isGame_Start = isGame_Start; }
 	bool GetIsGame_Start() { return isGame_Start; }

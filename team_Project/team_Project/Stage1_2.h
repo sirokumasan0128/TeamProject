@@ -1,9 +1,9 @@
 #pragma once
 #include<vector>
+#include "Base_Scene.h"
+#include "Player.h"
+#include"Collision.h"
 
-#define MAP_WIDTH 60
-#define MAP_HEIGHT 34
-#define BLOCK_SIZE 32
 
 class Stage1_2:public Base_Scene
 {
@@ -56,12 +56,15 @@ private:
 
 public:
 
+	Player player;
+	Collision collision;
 	Stage1_2();
 	~Stage1_2();
 
+	void Init();
 	void Update();
-
 	void Draw();
+	void Finish();
 
 	void Stage1_2_Map_Hit();//マップとプレイヤーの当たり判定
 
