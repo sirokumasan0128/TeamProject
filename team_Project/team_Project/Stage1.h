@@ -3,6 +3,7 @@
 #include "Stage1_2.h"
 #include "Stage1_3.h"
 #include "Player.h"
+#include "Collision.h"
 
 
 
@@ -13,6 +14,8 @@ private:
 
 
 public:
+
+
 	Stage1();
 	~Stage1();
 
@@ -21,6 +24,7 @@ public:
 	void Draw();
 	void Finish();
 
+	Collision collision;
 	Player player;
 	Stage1_1 stage1_1;
 	Stage1_2 stage1_2;

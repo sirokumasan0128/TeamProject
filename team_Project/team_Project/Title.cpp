@@ -7,13 +7,14 @@ using namespace std;
 Title::Title()
 	:title_Tex(0),isGame_Start(false)
 {
-	title_Tex = LoadGraph("");
+	//title_Tex = LoadGraph("");
 }
 
 
 
 void Title::Init()
 {
+	title_Tex = LoadGraph("title_Sample.png");
 
 }
 
@@ -32,7 +33,6 @@ void Title::Update()
 void Title::Draw()
 {
 
-	title_Tex = LoadGraph("title_Sample.png");
 	DrawGraph(0,0,title_Tex,TRUE);//タイトル画面の表示
 
 }

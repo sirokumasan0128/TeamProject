@@ -32,7 +32,7 @@ void Stage1::Draw()
 
 	stage1_1.Draw();
 	stage1_2.Draw();
-	player.Draw();
+	//player.Draw();
 	stage1_3.Draw();
 
 }
