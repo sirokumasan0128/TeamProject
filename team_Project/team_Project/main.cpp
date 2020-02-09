@@ -49,27 +49,8 @@ int WinMain(
 	Scene_Manager* scene_Manager;
 	scene_Manager->Change_Scene(scene_Manager->TITLE);
 
-	//enum Scene {
-	//	TITLE_SCENE,
-	//	STAGE1_SCENE,
-	//	END_SCENE,
-	//};
-
-	//Scene scene = TITLE_SCENE;
-
-	//Player player;
-
-	////シーン系
-	//Title title;
-	//Stage1_1 stage1_1;
-	//Stage1_2 stage1_2;
-	//Stage1_3 stage1_3;
 
 
-	//キャラクター系
-
-	//bool系
-	bool isPlayerInit = false;
 
 	KeyInput keyInput;
 
@@ -80,6 +61,7 @@ int WinMain(
 		return -1;
 	}
 
+		scene_Manager->Init();
 
 	//永久ループを抜ける処理
 	while (1)//簡単なループ処理
