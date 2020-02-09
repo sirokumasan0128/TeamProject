@@ -8,14 +8,34 @@ bool Collision::Block_Collision_Up(int Block_PosX, int Block_PosY,
 	int Player_PosX, int Player_PosY)
 {
 	//ƒuƒƒbƒN‚Ìã‚Æ‚Ì“–‚½‚è”»’è
-	if (Player_PosX >= Block_PosX &&
+	/*if (Player_PosX >= Block_PosX &&
 		Player_PosX <= Block_PosX + 32 &&
 		Player_PosY <= Block_PosY &&
 		Player_PosY >= Block_PosY - 32)
 	{
 		return true;
-	}
+	}*/
 
+
+	int vectlX, vectlY;
+
+
+	if (std::abs(Player_PosX - Block_PosX) < 32 / 2 + 32 / 2 &&
+		std::abs(Player_PosY - Block_PosY) < 32 / 2 + 32 / 2)
+	{
+		vectlX = Player_PosX - Block_PosX;
+		vectlY = Player_PosY - Block_PosY;
+
+		if (std::abs(vectlX) < std::abs(vectlY))
+		{
+			if (vectlY < 0)
+			{
+				//ã‚©‚ç‚Ì“–‚½‚è”»’è
+				return true;
+			}
+		}
+
+	}
 
 }
 bool Collision::Block_Collision_Left(int Block_PosX, int Block_PosY,
@@ -30,7 +50,7 @@ bool Collision::Block_Collision_Left(int Block_PosX, int Block_PosY,
 		return true;
 	}
 
-<<<<<<< HEAD
+
 	/*int vectlx, vectly;
 
 	if (std::abs(Player_PosX - Block_PosX) < 32 / 2 + 32 / 2 &&
@@ -50,7 +70,7 @@ bool Collision::Block_Collision_Left(int Block_PosX, int Block_PosY,
 		}
 
 	}*/
-=======
+
 
 }
 bool Collision::Block_Collision_Right(int Block_PosX, int Block_PosY,
@@ -79,7 +99,6 @@ bool Collision::Block_Collision_Bottom(int Block_PosX, int Block_PosY,
 		return true;
 	}
 
->>>>>>> f1d2f7875e9ffbed1eeef35a88b7dc38f66ab015
 
 }
 
