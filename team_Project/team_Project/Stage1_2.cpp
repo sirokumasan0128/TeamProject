@@ -62,7 +62,7 @@ void Stage1_2::Stage1_2_Map_Hit()
 			DrawFormatString(400, 400, GetColor(255, 255, 255), "%d\n%d", player.GetPlayerPosX(), player.GetPlayerPosY());
 			//緑のブロックとの当たり判定
 			//ここでブロックの上とプレイヤーの当たり判定を見てる
-			if (collision.Block_Collision_Right(
+			if (collision.Block_Collision_Up(
 				w*BLOCK_SIZE, h*BLOCK_SIZE,
 				player.GetPlayerPosX(),
 				player.GetPlayerPosY()) == true &&
