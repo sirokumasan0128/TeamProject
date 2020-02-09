@@ -56,6 +56,7 @@ private:
 
 public:
 
+	
 	Player player;
 	Collision collision;
 	Stage1_2();

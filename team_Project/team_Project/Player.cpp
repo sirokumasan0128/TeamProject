@@ -57,6 +57,9 @@ void Player::Update()
 	pos_X = pos_X + velocity_X;
 	pos_Y = pos_Y + velocity_Y;
 
+
+	DrawFormatString(400, 460, GetColor(255, 255, 255), "playerclass  %d\n%d",pos_X, pos_Y);
+
 }
 
 void Player::Draw()

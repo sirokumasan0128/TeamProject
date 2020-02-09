@@ -6,6 +6,7 @@
 //#include"Player.h"
 //#include"Collision.h"
 
+
 using namespace std;
 
 Stage1_2::Stage1_2()
@@ -51,30 +52,50 @@ void Stage1_2::Draw()
 
 void Stage1_2::Stage1_2_Map_Hit()
 {
-	player.Update();
+	//ここで二重呼び出しになっている説
+	//player.Update();
+	//ここのupdataを切るとこっちのクラスで値を取得できない
+
+
+	//値を持ってこれてるか確認用
+	DrawFormatString(400, 400, GetColor(255, 255, 255), "stageclass  %d\n%d", player.GetPlayerPosX(), player.GetPlayerPosY());
+
+	
 	for (int h = 0;h < MAP_HEIGHT;h++)
 	{
 		for (int w = 0;w < MAP_WIDTH;w++)
 		{
 			//vector<int> Block_Position = { w*BLOCK_SIZE,h*BLOCK_SIZE };
 
-			//値を持ってこれてるか確認用
-			DrawFormatString(400,400,GetColor(255,255,255),"%d\n%d",player.GetPlayerPosX(),player.GetPlayerPosY());
+
 			//緑のブロックとの当たり判定
 			//ここでブロックの上とプレイヤーの当たり判定を見てる
-			if (collision.Block_Collision(
-				w*BLOCK_SIZE, h*BLOCK_SIZE,
-				player.GetPlayerPosX(),
-				player.GetPlayerPosY()) == true)
-			{
 
-				player.SetPlayerVelocityY(0);
+			if (Stage1_MapInfo_Layer2[h][w] == 002)
+			{
+				if (collision.Block_Collision(
+					w*BLOCK_SIZE, h*BLOCK_SIZE,
+					player.GetPlayerPosX(),
+					player.GetPlayerPosY()) == true)
+				{
+
+					player.SetPlayerVelocityY(0);
+
+					player.SetPlayerPosX(500);
+					player.SetPlayerPosY(500);
+
+					//player.SetPlayerVelocityX(0);
+
+					//DrawFormatString(600, 400, GetColor(255, 255, 255), "%d\n%d", player.GetPlayerPosX(), player.GetPlayerPosY());
+					DrawFormatString(600, 460, GetColor(255, 255, 255), "%d\n%d", w*BLOCK_SIZE, h*BLOCK_SIZE);
+				}
 			}
 
+		
 
 		}
 	}
-
+	
 
 }
 

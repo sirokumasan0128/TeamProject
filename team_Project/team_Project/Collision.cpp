@@ -25,6 +25,26 @@ bool Collision::Block_Collision(int Block_PosX,int Block_PosY,
 		return true;
 	}
 
+	/*int vectlx, vectly;
+
+	if (std::abs(Player_PosX - Block_PosX) < 32 / 2 + 32 / 2 &&
+		std::abs(Player_PosY - Block_PosY) < 32 / 2 + 32 / 2)
+	{
+		vectlx = Player_PosX - Block_PosX;
+		vectly = Player_PosY - Block_PosY;
+				
+
+		if (std::abs(vectlx) < std::abs(vectly))//ã‚©‚ç‚Ì“–‚½‚è”»’è
+		{
+			if (vectly < 0)
+			{
+				return true;
+				
+			}
+		}
+
+	}*/
+
 }
 
 //bool Collision::Item_Collision()
