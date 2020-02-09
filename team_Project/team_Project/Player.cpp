@@ -36,26 +36,29 @@ void Player::Update()
 
 	if (CheckHitKey(KEY_INPUT_A) == 1)
 	{
-		velocity_X -= 1;
+		velocity_X -= 5;
 	}
 	if (CheckHitKey(KEY_INPUT_W) == 1)
 	{
-		velocity_Y -= 1;
+		velocity_Y -= 5;
 
 	}
 	if (CheckHitKey(KEY_INPUT_D) == 1)
 	{
-		velocity_X += 1;
+		velocity_X += 5;
 
 	}
 	if (CheckHitKey(KEY_INPUT_S) == 1)
 	{
-		velocity_Y += 1;
+		velocity_Y += 5;
 	}
 
 
 	pos_X = pos_X + velocity_X;
 	pos_Y = pos_Y + velocity_Y;
+
+
+	DrawFormatString(400, 460, GetColor(255, 255, 255), "playerclass  %d\n%d",pos_X, pos_Y);
 
 }
 
