@@ -36,21 +36,21 @@ void Player::Update()
 
 	if (CheckHitKey(KEY_INPUT_A) == 1)
 	{
-		velocity_X -= 1;
+		velocity_X -= 5;
 	}
 	if (CheckHitKey(KEY_INPUT_W) == 1)
 	{
-		velocity_Y -= 1;
+		velocity_Y -= 5;
 
 	}
 	if (CheckHitKey(KEY_INPUT_D) == 1)
 	{
-		velocity_X += 1;
+		velocity_X += 5;
 
 	}
 	if (CheckHitKey(KEY_INPUT_S) == 1)
 	{
-		velocity_Y += 1;
+		velocity_Y += 5;
 	}
 
 
