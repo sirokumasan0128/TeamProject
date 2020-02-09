@@ -4,8 +4,8 @@
 
 using namespace std;
 
-bool Collision::Block_Collision(int Block_PosX,int Block_PosY,
-								int Player_PosX,int Player_PosY)
+bool Collision::Block_Collision_Up(int Block_PosX, int Block_PosY,
+	int Player_PosX, int Player_PosY)
 {
 	//ブロックの上との当たり判定
 	if (Player_PosX >= Block_PosX &&
@@ -16,6 +16,11 @@ bool Collision::Block_Collision(int Block_PosX,int Block_PosY,
 		return true;
 	}
 
+
+}
+bool Collision::Block_Collision_Left(int Block_PosX, int Block_PosY,
+	int Player_PosX, int Player_PosY)
+{
 	//ブロックの左との当たり判定
 	if (Player_PosX <= Block_PosX &&
 		Player_PosX >= Block_PosX - 32 &&
@@ -25,6 +30,7 @@ bool Collision::Block_Collision(int Block_PosX,int Block_PosY,
 		return true;
 	}
 
+<<<<<<< HEAD
 	/*int vectlx, vectly;
 
 	if (std::abs(Player_PosX - Block_PosX) < 32 / 2 + 32 / 2 &&
@@ -44,6 +50,36 @@ bool Collision::Block_Collision(int Block_PosX,int Block_PosY,
 		}
 
 	}*/
+=======
+
+}
+bool Collision::Block_Collision_Right(int Block_PosX, int Block_PosY,
+	int Player_PosX, int Player_PosY)
+{
+	//ブロック右との当たり判定
+	if (Player_PosX >= Block_PosX + 32 &&
+		Player_PosX <= Block_PosX &&
+		Player_PosY >= Block_PosY -32 &&
+		Player_PosY <= Block_PosY )
+	{
+		return true;
+	}
+
+
+}
+bool Collision::Block_Collision_Bottom(int Block_PosX, int Block_PosY,
+	int Player_PosX, int Player_PosY)
+{
+	//ブロックの上との当たり判定
+	if (Player_PosX >= Block_PosX &&
+		Player_PosX <= Block_PosX + 32 &&
+		Player_PosY <= Block_PosY &&
+		Player_PosY >= Block_PosY - 32)
+	{
+		return true;
+	}
+
+>>>>>>> f1d2f7875e9ffbed1eeef35a88b7dc38f66ab015
 
 }
 
