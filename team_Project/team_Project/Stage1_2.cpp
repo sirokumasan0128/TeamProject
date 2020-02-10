@@ -120,7 +120,11 @@ void Stage1_2::Stage1_2_Map_Hit()
 			{
 
 
+<<<<<<< HEAD
 				player.SetPlayerPosY(h*BLOCK_SIZE - 32);
+=======
+				player.SetPlayerPosY(h*BLOCK_SIZE-64);
+>>>>>>> 60ca6bb17983f536c5d25e58836d9e71f2b9777d
 
 				//player.SetPlayerVelocityY(0);
 				DrawFormatString(500, 500, GetColor(255, 255, 255), "%d", player.GetPlayerVelocityY());
@@ -141,7 +145,11 @@ void Stage1_2::Stage1_2_Map_Hit()
 			{
 
 				//‰º‚©‚ç
+<<<<<<< HEAD
 				player.SetPlayerPosY(h*BLOCK_SIZE + 32);
+=======
+				player.SetPlayerPosY(h*BLOCK_SIZE +32);
+>>>>>>> 60ca6bb17983f536c5d25e58836d9e71f2b9777d
 			}
 
 			if (collision.Block_Collision_Right(w*BLOCK_SIZE, h*BLOCK_SIZE,
@@ -151,6 +159,7 @@ void Stage1_2::Stage1_2_Map_Hit()
 			{
 
 
+<<<<<<< HEAD
 				player.SetPlayerPosX(w*BLOCK_SIZE);
 			}
 
@@ -162,8 +171,20 @@ void Stage1_2::Stage1_2_Map_Hit()
 
 
 				player.SetPlayerPosX(w*BLOCK_SIZE - 32);
+=======
+				player.SetPlayerPosX(w*BLOCK_SIZE + 32);
+>>>>>>> 60ca6bb17983f536c5d25e58836d9e71f2b9777d
 			}
 
+			if (collision.Block_Collision_Left(w*BLOCK_SIZE, h*BLOCK_SIZE,
+				player.GetPlayerPosX(),
+				player.GetPlayerPosY()) == true &&
+				Stage1_MapInfo_Layer2[h][w] != 000)
+			{
+
+
+				player.SetPlayerPosX(w*BLOCK_SIZE - 32);
+			}
 
 			/*if (Stage1_MapInfo_Layer2[h][w] == 002 )
 			{

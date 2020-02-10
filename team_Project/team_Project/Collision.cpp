@@ -21,10 +21,10 @@ bool Collision::Block_Collision_Up(int Block_PosX, int Block_PosY,
 
 
 	if (std::abs(Player_PosX - Block_PosX) < 32 / 2 + 32 / 2 &&
-		std::abs(Player_PosY - Block_PosY) < 32 / 2 + 32 / 2)
+		std::abs(Player_PosY +32 - Block_PosY) < 32 / 2 + 32 / 2)
 	{
 		vectlX = Player_PosX - Block_PosX;
-		vectlY = Player_PosY - Block_PosY;
+		vectlY = Player_PosY +32- Block_PosY;
 
 		if (std::abs(vectlX) < std::abs(vectlY))
 		{
@@ -54,10 +54,14 @@ bool Collision::Block_Collision_Left(int Block_PosX, int Block_PosY,
 	int vectlx, vectly;
 
 	if (std::abs(Player_PosX - Block_PosX) < 32 / 2 + 32 / 2 &&
+<<<<<<< HEAD
 		std::abs(Player_PosY  - Block_PosY) < 32 / 2 + 32 / 2)
+=======
+		std::abs(Player_PosY +32 - Block_PosY) < 32 / 2 + 32 / 2)
+>>>>>>> 60ca6bb17983f536c5d25e58836d9e71f2b9777d
 	{
-		vectlx = Player_PosX - Block_PosX;
-		vectly = Player_PosY - Block_PosY;
+		vectlx = Player_PosX  - Block_PosX;
+		vectly = Player_PosY +32 - Block_PosY;
 				
 
 		if (std::abs(vectlx) < std::abs(vectly))//ã‚©‚ç‚Ì“–‚½‚è”»’è
@@ -95,10 +99,10 @@ bool Collision::Block_Collision_Right(int Block_PosX, int Block_PosY,
 	int vectlx, vectly;
 
 	if (std::abs(Player_PosX - Block_PosX) < 32 / 2 + 32 / 2 &&
-		std::abs(Player_PosY - Block_PosY) < 32 / 2 + 32 / 2)
+		std::abs(Player_PosY+32 - Block_PosY) < 32 / 2 + 32 / 2)
 	{
-		vectlx = Player_PosX - Block_PosX;
-		vectly = Player_PosY - Block_PosY;
+		vectlx = Player_PosX  - Block_PosX;
+		vectly = Player_PosY +32 - Block_PosY;
 
 
 		if (std::abs(vectlx) < std::abs(vectly))//ã‚©‚ç‚Ì“–‚½‚è”»’è
@@ -139,11 +143,11 @@ bool Collision::Block_Collision_Bottom(int Block_PosX, int Block_PosY,
 	int vectlX, vectlY;
 
 
-	if (std::abs(Player_PosX - Block_PosX) < 32 / 2 + 32 / 2 &&
-		std::abs(Player_PosY - Block_PosY) < 32 / 2 + 32 / 2)
+	if (std::abs(Player_PosX +32 - Block_PosX) < 32 / 2 + 32 / 2 &&
+		std::abs(Player_PosY +32 - Block_PosY) < 32 / 2 + 32 / 2)
 	{
-		vectlX = Player_PosX - Block_PosX;
-		vectlY = Player_PosY - Block_PosY;
+		vectlX = Player_PosX  - Block_PosX;
+		vectlY = Player_PosY  - Block_PosY;
 
 		if (std::abs(vectlX) < std::abs(vectlY))
 		{
