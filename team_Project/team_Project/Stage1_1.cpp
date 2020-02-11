@@ -29,7 +29,7 @@ void Stage1_1::Draw()
 	{
 		for (int w = 0;w < MAP_WIDTH;w++)
 		{
-			if (Stage1_MapInfo_Layer1[h][w] == 001)
+			if (Stage1_MapInfo_Layer1[h][w] == 1)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
 				DrawGraph(w*BLOCK_SIZE,h*BLOCK_SIZE,ground_Block1,TRUE);

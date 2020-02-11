@@ -38,6 +38,7 @@ bool Collision::Block_Collision_Up(int Block_PosX, int Block_PosY,//Ç±ÇÍÇÕëÂè‰ïv
 	}
 
 }
+
 bool Collision::Block_Collision_Left(int Block_PosX, int Block_PosY,
 	int Player_PosX, int Player_PosY)
 {
@@ -79,11 +80,10 @@ bool Collision::Block_Collision_Left(int Block_PosX, int Block_PosY,
 				return true;
 			}
 		}
-
 	}
 
-
 }
+
 bool Collision::Block_Collision_Right(int Block_PosX, int Block_PosY,
 	int Player_PosX, int Player_PosY)
 {
@@ -104,7 +104,6 @@ bool Collision::Block_Collision_Right(int Block_PosX, int Block_PosY,
 		vectlx = Player_PosX  - Block_PosX;
 		vectly = Player_PosY + 32 - Block_PosY;
 
-
 		if (std::abs(vectlx) < std::abs(vectly))//è„Ç©ÇÁÇÃìñÇΩÇËîªíË
 		{
 
@@ -123,10 +122,7 @@ bool Collision::Block_Collision_Right(int Block_PosX, int Block_PosY,
 
 	}
 
-
-
 }
-
 
 bool Collision::Block_Collision_Bottom(int Block_PosX, int Block_PosY,
 	int Player_PosX, int Player_PosY)
@@ -141,7 +137,6 @@ bool Collision::Block_Collision_Bottom(int Block_PosX, int Block_PosY,
 	}*/
 
 	int vectlX, vectlY;
-
 
 	if (std::abs(Player_PosX - Block_PosX) < 32 / 2 + 32 / 2 &&
 		std::abs(Player_PosY + 32 - Block_PosY) < 32 / 2 + 32 / 2)
@@ -159,15 +154,15 @@ bool Collision::Block_Collision_Bottom(int Block_PosX, int Block_PosY,
 			{
 				
 				return true;
+
 			}
 		}
 
 	}
 
-
-
 }
 
+//
 //bool Collision::Item_Collision()
 //{
 //

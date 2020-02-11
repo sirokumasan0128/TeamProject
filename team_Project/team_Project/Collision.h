@@ -26,5 +26,7 @@ public:
 		int Player_PosX,//プレイヤーの左上のX
 		int Player_posY);//プレイヤーの左上のY
 
+	
+
 	bool Item_Collision();//鍵などのアイテムの当たり判定のメソッド
 };

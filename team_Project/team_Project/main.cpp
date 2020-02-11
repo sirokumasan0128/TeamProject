@@ -69,6 +69,8 @@ int WinMain(
 
 		ClearDrawScreen();
 
+		
+
 		scene_Manager->Update();
 		scene_Manager->Draw();
 
