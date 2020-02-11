@@ -162,6 +162,23 @@ bool Collision::Block_Collision_Bottom(int Block_PosX, int Block_PosY,
 
 }
 
+bool Collision::Floor_Camera(
+	int Room_LeftUpX,
+	int Room_LeftUpY,
+	int Room_RightDownX,
+	int Room_RightDownY,
+	int Player_PosX,
+	int Player_PosY)
+{
+	if (Room_LeftUpX >= Player_PosX &&
+		Room_RightDownX <= Player_PosX &&
+		Room_LeftUpY >= Player_PosY &&
+		Room_LeftUpY <= Player_PosY)
+	{
+		return true;
+	}
+}
+
 //
 //bool Collision::Item_Collision()
 //{
