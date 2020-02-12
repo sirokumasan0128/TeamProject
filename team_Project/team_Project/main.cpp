@@ -74,33 +74,6 @@ int WinMain(
 		scene_Manager->Update();
 		scene_Manager->Draw();
 
-		//
-		//switch (scene)
-		//{
-		//case TITLE_SCENE:
-		//	title.Title_Update();
-		//	title.Title_Draw();
-		//	if (title.GetIsGame_Start() == true)
-		//	{
-		//		scene = STAGE1_SCENE;
-		//	}
-		//	break;
-		//case STAGE1_SCENE:
-		//	if (title.GetIsPlayer_Init() == true&&isPlayerInit == false)
-		//	{
-		//		
-		//		player.Init();
-		//		isPlayerInit = true;
-
-		//	}
-		//	player.Update();
-		//	stage1_1.Stage1_1_Map_Draw();
-		//	stage1_2.Stage1_2_Map_Draw();
-		//	player.Draw();
-		//	stage1_3.Stage1_3_Map_Draw();
-		//	stage1_2.Stage1_2_Map_Hit();
-		//	break;
-		//}
 
 
 		ScreenFlip(); 

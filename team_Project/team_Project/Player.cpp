@@ -14,11 +14,9 @@ void Player::Init()
 {	
 
 	Player player;	
-	//player.base_Actor.pos_X = 300;
-	//player.base_Actor.pos_Y = 400;
 
-	pos_X = player.base_Actor.pos_X = 300;
-	pos_Y = player.base_Actor.pos_Y = 400;
+	pos_X = player.base_Actor.pos_X = 180;
+	pos_Y = player.base_Actor.pos_Y = 360;
 	
 	Cr = GetColor(255,255,255);
 	velocity_X = 0;
@@ -36,21 +34,21 @@ void Player::Update()
 
 	if (CheckHitKey(KEY_INPUT_A) == 1)
 	{
-		velocity_X -= 5;
+		velocity_X -= 6;
 	}
 	if (CheckHitKey(KEY_INPUT_W) == 1)
 	{
-		velocity_Y -= 5;
+		velocity_Y -= 6;
 
 	}
 	if (CheckHitKey(KEY_INPUT_D) == 1)
 	{
-		velocity_X += 5;
+		velocity_X += 6;
 
 	}
 	if (CheckHitKey(KEY_INPUT_S) == 1)
 	{
-		velocity_Y += 5;
+		velocity_Y += 6;
 	}
 
 
