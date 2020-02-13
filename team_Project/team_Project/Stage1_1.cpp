@@ -11,9 +11,8 @@ Stage1_1::Stage1_1()
 
 }
 
-void Stage1_1::Init(Player *player)
+void Stage1_1::Init()
 {
-	this->player = player;
 }
 
 void Stage1_1::Update()
@@ -59,15 +58,15 @@ void Stage1_1::Draw()
 				   //部屋に入ったか入ってないかを知らべる
 				if (collision.Floor_Camera(
 					MiniX, MiniY, MaxX, MaxY,
-					player->GetPlayerPosX(),
-					player->GetPlayerPosY()) == true)
+					player.GetPlayerPosX(),
+					player.GetPlayerPosY()) == true)
 				{
 					camera_StaggerX = (MaxX - MiniX) / 2;//部屋1のWidthの半分のサイズ
 					camera_StaggerY = (MaxY - MiniY) / 2;//部屋1のHeightの半分のサイズ
 				}
 				DrawFormatString(500, 100, GetColor(255, 255, 255), "camera_Stagger %d\ncamera_Stagger %d", camera_StaggerX, camera_StaggerY);
 				DrawFormatString(500, 150, GetColor(255, 255, 255), "MiniX %d\nMiniY %d", MiniX, MiniY);
-				DrawFormatString(500, 200, GetColor(255, 255, 255), "stageclass  %d\n%d", player->GetPlayerPosX(), player->GetPlayerPosY());
+				DrawFormatString(500, 200, GetColor(255, 255, 255), "stageclass  %d\n%d", player.GetPlayerPosX(), player.GetPlayerPosY());
 
 			}
 

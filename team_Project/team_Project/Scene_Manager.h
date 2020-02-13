@@ -13,10 +13,9 @@ public:
 		STAGE1,
 	};
 
-	Player *player;
 
 	static void Change_Scene(Scene scene);//シーンを引数によって変える
-	static void Init(Player *player);     //現在のシーンの初期化
+	static void Init();     //現在のシーンの初期化
 	static void Update();                 //現在のシーンの描画
 	static void Draw();                   //現在のシーンの描画関数
 	static void Finish();                 //現在のシーンの終了処理

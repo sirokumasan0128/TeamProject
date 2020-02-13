@@ -12,7 +12,7 @@ Title::Title()
 
 
 
-void Title::Init(Player *player)
+void Title::Init()
 {
 	title_Tex = LoadGraph("title_Sample.png");
 

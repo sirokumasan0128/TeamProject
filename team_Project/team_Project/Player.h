@@ -22,12 +22,16 @@ private:
 	bool isHit,//プレイヤーのヒットフラグ
 		 isDead;//プレイヤーの死亡フラグ
 
+	int player_1;
+
 public:
 	
 	Base_Actor base_Actor;
 
 	Player();
 	~Player();
+
+	int GetPlayer_1() { return player_1; }
 
 	int GetPlayerPosX() { return pos_X; }
 	void SetPlayerPosX(int pos_X);

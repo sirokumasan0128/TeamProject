@@ -54,7 +54,6 @@ int WinMain(
 
 
 	KeyInput keyInput;
-	Player* player_1 = new Player();
 
 	//DXライブラリの初期化
 	if (DxLib_Init() == -1)
@@ -63,7 +62,7 @@ int WinMain(
 		return -1;
 	}
 
-		scene_Manager->Init(player_1);
+		scene_Manager->Init();
 
 	//永久ループを抜ける処理
 	while (1)//簡単なループ処理
@@ -89,7 +88,6 @@ int WinMain(
 
 	//Dxライブラリ終了処理
 	DxLib_End();
-	delete(player_1);
 
 	return 0;
 }

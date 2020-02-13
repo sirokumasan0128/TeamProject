@@ -20,11 +20,13 @@ public:
 	Stage1();
 	~Stage1();
 
-	void Init(Player *player);
+	//void Init(Player *player);
+	void Init();
 	void Update();
 	void Draw();
 	void Finish();
 
+	Base_Actor base_Actor;
 	Player player;
 	Stage1_1 stage1_1;
 	Stage1_2 stage1_2;

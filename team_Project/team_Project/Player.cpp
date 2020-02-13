@@ -1,6 +1,7 @@
 #include<DxLib.h>
 #include<iostream>
 #include "Player.h"
+#include "Scene_Manager.h"
 
 using namespace std;
 
@@ -14,11 +15,10 @@ Player::Player()
 void Player::Init()
 {	
 
-	Player player;	
 
-	pos_X = player.base_Actor.pos_X = 180;
-	pos_Y = player.base_Actor.pos_Y = 360;
-	
+	Player player;	
+	pos_X = base_Actor.pos_X = 0;
+	pos_Y = base_Actor.pos_Y = 0;
 	Cr = GetColor(255,255,255);
 	velocity_X = 0;
 	velocity_Y = 0;
@@ -75,7 +75,7 @@ void Player::Draw()
 	
 		//DrawGraph(pos_X +velocity_X ,pos_Y + velocity_Y,player_Tex,FALSE);
 		
-		DrawGraph(pos_X,pos_Y,player_Tex,FALSE);
+ 		DrawGraph(pos_X,pos_Y,player_Tex,FALSE);
 
 		//DrawFormatString(400, 400, GetColor(255, 255, 255), "%d\n%d", pos_X, pos_Y);
 

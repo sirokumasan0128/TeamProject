@@ -14,9 +14,8 @@ public:
 	~Base_Scene();
 	//=0‚Í’†g‚ª‹ó‚Á‚Û‚Æ‚¢‚¤ˆÓ–¡
 
-	Player *player;
 
-	virtual void Init(Player *player) = 0;//0‚ğ‚Â‚¯‚é‚ÆÀ‘•‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢
+	virtual void Init() = 0;//0‚ğ‚Â‚¯‚é‚ÆÀ‘•‚µ‚È‚¯‚ê‚Î‚¢‚¯‚È‚¢
 
 	virtual void Update() = 0;//Œp³‚³‚¹‚½‚¢‚©‚çvirtual
 
