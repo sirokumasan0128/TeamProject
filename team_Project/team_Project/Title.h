@@ -17,7 +17,7 @@ public:
 	Title();
 	~Title();
 
-	void Init();
+	void Init(Player *player);
 	void Update();
 	void Draw();
 	void Finish();

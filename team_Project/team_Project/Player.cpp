@@ -4,6 +4,7 @@
 
 using namespace std;
 
+
 Player::Player()
 {
 
@@ -25,6 +26,15 @@ void Player::Init()
 
 	isHit = player.base_Actor.isHit;
 	isDead = player.base_Actor.isDead;
+}
+
+void Player::SetPlayerPosX(int pos_X)
+{
+	this->pos_X = pos_X;
+}
+void Player::SetPlayerPosY(int pos_Y)
+{
+	this->pos_Y = pos_Y;
 }
 
 void Player::Update()

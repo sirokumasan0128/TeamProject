@@ -28,17 +28,25 @@ public:
 
 	Player();
 	~Player();
+
+	int GetPlayerPosX() { return pos_X; }
+	void SetPlayerPosX(int pos_X);
+	int GetPlayerPosY() { return pos_Y; }
+	void SetPlayerPosY(int pos_Y);
+
 	void Init();//プレイヤー用の初期化用
 
 	void Update();//プレイヤーの移動用
 
 	void Draw();//プレイヤーの描画用
 
+	
+
 	//プレイヤーの座標のアクセッサ
-	void SetPlayerPosX(int pos_X) { this->pos_X = pos_X; }
-	int GetPlayerPosX() { return pos_X; }
-	void SetPlayerPosY(int pos_Y) { this->pos_Y = pos_Y; }
-	int GetPlayerPosY() { return pos_Y; }
+	//void SetPlayerPosX(int pos_X) { this->pos_X = pos_X; }
+	//int GetPlayerPosX() { return pos_X; }
+	//void SetPlayerPosY(int pos_Y) { this->pos_Y = pos_Y; }
+	//int GetPlayerPosY() { return pos_Y; }
 
 	//プレイヤーの移動量のアクセッサ
 	void SetPlayerVelocityX(int velocity_X) { this->velocity_X = velocity_X; }

@@ -4,15 +4,15 @@
 
 Stage1::Stage1()
 {
-
 	//player.Init();
-	stage1_1.Init();
-	stage1_2.Init();
-	stage1_3.Init();
+	stage1_1.Init(&player);
+	stage1_2.Init(&player);
+	stage1_3.Init(&player);
 
 }
 
-void Stage1::Init()
+
+void Stage1::Init(Player *player)
 {
 
 }
@@ -20,6 +20,9 @@ void Stage1::Init()
 void Stage1::Update()
 {
 	//player.Update();
+	
+	pos_X = player.GetPlayerPosX();
+	pos_Y = player.GetPlayerPosY();
 	stage1_1.Update();
 	stage1_2.Update();
 	stage1_2.Stage1_2_Map_Hit();

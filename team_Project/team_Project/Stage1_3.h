@@ -54,7 +54,9 @@ public:
 	Stage1_3();
 	~Stage1_3();
 
-	void Init();
+	Player *player;
+
+	void Init(Player *player);
 	void Update();
 	void Draw();
 	void Finish();

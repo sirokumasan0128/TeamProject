@@ -34,9 +34,10 @@ void Scene_Manager::Change_Scene(Scene scene)
 
 }
 
-void Scene_Manager::Init()
+void Scene_Manager::Init(Player *player)
 {
-	m_pScene_1->Init();
+	
+	m_pScene_1->Init(player);
 }
 
 void Scene_Manager::Update()

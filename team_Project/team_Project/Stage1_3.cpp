@@ -11,9 +11,9 @@ Stage1_3::Stage1_3()
 
 }
 
-void Stage1_3::Init()
+void Stage1_3::Init(Player *player)
 {
-
+	this->player = player;
 }
 
 void Stage1_3::Update()

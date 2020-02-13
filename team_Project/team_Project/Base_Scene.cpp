@@ -6,9 +6,9 @@ Base_Scene::Base_Scene()
 
 }
 
-void Base_Scene::Init()
+void Base_Scene::Init(Player *player)
 {
-
+	//this->player = player;
 }
 
 void Base_Scene::Update()

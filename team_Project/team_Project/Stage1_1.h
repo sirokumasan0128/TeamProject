@@ -64,12 +64,12 @@ private:
 public:
 
 	Collision collision;
-	Player player;
+	Player *player;
 
 	Stage1_1();
 	~Stage1_1();
 
-	void Init();
+	void Init(Player *player);
 	void Update();
 	void Draw();
 	void Finish();

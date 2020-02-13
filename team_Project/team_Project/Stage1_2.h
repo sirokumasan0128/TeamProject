@@ -9,6 +9,10 @@ class Stage1_2:public Base_Scene
 {
 private:
 
+	//プレイヤーの位置情報を持つ変数
+	int* pos_X;
+	int* pos_Y;
+
 	//アセットのロード用
 	int	ground_Block2;
 
@@ -58,13 +62,13 @@ private:
 public:
 
 	
-	Player player;
+	Player *player;
 	Collision collision;
 
 	Stage1_2();
 	~Stage1_2();
 
-	void Init();
+	void Init(Player *player);
 	void Update();
 	void Draw();
 	void Finish();
