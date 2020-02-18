@@ -6,7 +6,7 @@ extern int key[256];
 class KeyInput
 {
 public:
-	void update();
+	void Update();
 	bool InputKeyTrigger(int key);
 
 

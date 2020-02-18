@@ -13,55 +13,58 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
-    <Filter Include="ソース ファイル\Actor.cpp">
-      <UniqueIdentifier>{de666fe2-6530-4fd9-8fc5-1cbe4129ee6f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\Actor.h">
-      <UniqueIdentifier>{bd4885d9-b818-4460-8c70-2feb16628220}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Item.cpp">
-      <UniqueIdentifier>{8040e994-066c-4fe5-83c3-3109380d7ed9}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\Item.h">
-      <UniqueIdentifier>{ccb5827f-ef3e-4c26-9c1e-35a64eb11283}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\Utility">
-      <UniqueIdentifier>{6c2eaa34-bef7-41e0-ab63-288fd4769497}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ソース ファイル\Utility">
-      <UniqueIdentifier>{1e5850dd-7b39-480d-a10d-9e6432e08fe0}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\Scene.h">
-      <UniqueIdentifier>{2ce8cba7-8ca9-4521-8a26-e268799d1265}</UniqueIdentifier>
+    <Filter Include="ヘッダー ファイル\Scene.cpp">
+      <UniqueIdentifier>{fc01e79d-7366-4706-9be5-fd4150f5c14b}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Scene.cpp">
-      <UniqueIdentifier>{436c0287-7eb3-47b1-b10a-4a5109107b6f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="ヘッダー ファイル\Scene.h\Stage1">
-      <UniqueIdentifier>{905d5be5-5dee-4c6d-bab3-3e9bcb340263}</UniqueIdentifier>
+      <UniqueIdentifier>{4faf7253-0f0f-4f39-b952-40c6e6e500b7}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Scene.cpp\Stage1.cpp">
-      <UniqueIdentifier>{7722efe1-48d4-4e7a-adfb-6e050d2bef3c}</UniqueIdentifier>
+      <UniqueIdentifier>{17e73b47-8731-452f-89e2-3a0e7d1a5827}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Scene.cpp\Stage1.h">
+      <UniqueIdentifier>{14c7226a-6fc4-43ef-a4f8-ed74b3866f63}</UniqueIdentifier>
     </Filter>
     <Filter Include="ソース ファイル\Scene.cpp\Title.cpp">
-      <UniqueIdentifier>{6ba43448-afa4-4d91-8416-344da8786a2b}</UniqueIdentifier>
+      <UniqueIdentifier>{d64e68ae-bb42-47da-840d-d0204ecc97aa}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ヘッダー ファイル\Scene.h\Title.h">
-      <UniqueIdentifier>{e6a0fe6d-733f-4d84-9df8-336a549f901c}</UniqueIdentifier>
+    <Filter Include="ヘッダー ファイル\Scene.cpp\Title.h">
+      <UniqueIdentifier>{180b02d6-f2f8-44c9-a22b-e0db45bf3907}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Utility.h">
+      <UniqueIdentifier>{5517dd08-e6ee-47b6-b1bc-12fe73695f70}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Utility.cpp">
+      <UniqueIdentifier>{1b0d05d4-e7d3-48c6-9f9b-e6615a6b51e8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ソース ファイル\Actor.cpp">
+      <UniqueIdentifier>{d1267d8d-b68d-4b83-ade1-605d0ac7e607}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ヘッダー ファイル\Actor.h">
+      <UniqueIdentifier>{cedd2488-5180-4f5a-9a09-7e5877ad2e53}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>ソース ファイル</Filter>
     </ClCompile>
-    <ClCompile Include="Player.cpp">
-      <Filter>ソース ファイル\Actor.cpp</Filter>
+    <ClCompile Include="Base_Scene.cpp">
+      <Filter>ソース ファイル\Scene.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Scene_Manager.cpp">
+      <Filter>ソース ファイル\Scene.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Title.cpp">
+      <Filter>ソース ファイル\Scene.cpp\Title.cpp</Filter>
     </ClCompile>
     <ClCompile Include="KeyInput.cpp">
-      <Filter>ソース ファイル\Utility</Filter>
+      <Filter>ソース ファイル\Utility.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Collision.cpp">
-      <Filter>ソース ファイル\Utility</Filter>
+      <Filter>ソース ファイル\Utility.cpp</Filter>
+    </ClCompile>
+    <ClCompile Include="Stage1.cpp">
+      <Filter>ソース ファイル\Scene.cpp\Stage1.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Stage1_1.cpp">
       <Filter>ソース ファイル\Scene.cpp\Stage1.cpp</Filter>
@@ -72,67 +75,52 @@
     <ClCompile Include="Stage1_3.cpp">
       <Filter>ソース ファイル\Scene.cpp\Stage1.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Stage1.cpp">
-      <Filter>ソース ファイル\Scene.cpp\Stage1.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Title.cpp">
-      <Filter>ソース ファイル\Scene.cpp\Title.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Vector2.cpp">
-      <Filter>ソース ファイル\Utility</Filter>
+    <ClCompile Include="Player.cpp">
+      <Filter>ソース ファイル\Actor.cpp</Filter>
     </ClCompile>
     <ClCompile Include="Base_Actor.cpp">
       <Filter>ソース ファイル\Actor.cpp</Filter>
     </ClCompile>
-    <ClCompile Include="Base_Scene.cpp">
-      <Filter>ソース ファイル\Scene.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="Scene_Manager.cpp">
-      <Filter>ソース ファイル\Scene.cpp</Filter>
-    </ClCompile>
-    <ClCompile Include="CSVReader.cpp">
-      <Filter>ソース ファイル\Utility</Filter>
+    <ClCompile Include="..\..\..\..\team_Project\team_Project\team_Project\Vector2.cpp">
+      <Filter>ソース ファイル\Utility.cpp</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Player.h">
-      <Filter>ヘッダー ファイル\Actor.h</Filter>
+    <ClInclude Include="Base_Scene.h">
+      <Filter>ヘッダー ファイル\Scene.cpp</Filter>
     </ClInclude>
-    <ClInclude Include="KeyInput.h">
-      <Filter>ヘッダー ファイル\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Collision.h">
-      <Filter>ヘッダー ファイル\Utility</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage1_1.h">
-      <Filter>ヘッダー ファイル\Scene.h\Stage1</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage1_3.h">
-      <Filter>ヘッダー ファイル\Scene.h\Stage1</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage1_2.h">
-      <Filter>ヘッダー ファイル\Scene.h\Stage1</Filter>
-    </ClInclude>
-    <ClInclude Include="Stage1.h">
-      <Filter>ヘッダー ファイル\Scene.h\Stage1</Filter>
+    <ClInclude Include="Scene_Manager.h">
+      <Filter>ヘッダー ファイル\Scene.cpp</Filter>
     </ClInclude>
     <ClInclude Include="Title.h">
-      <Filter>ヘッダー ファイル\Scene.h\Title.h</Filter>
+      <Filter>ヘッダー ファイル\Scene.cpp\Title.h</Filter>
     </ClInclude>
-    <ClInclude Include="Vector2.h">
-      <Filter>ヘッダー ファイル\Utility</Filter>
+    <ClInclude Include="KeyInput.h">
+      <Filter>ヘッダー ファイル\Utility.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>ヘッダー ファイル\Utility.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1.h">
+      <Filter>ヘッダー ファイル\Scene.cpp\Stage1.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1_1.h">
+      <Filter>ヘッダー ファイル\Scene.cpp\Stage1.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1_2.h">
+      <Filter>ヘッダー ファイル\Scene.cpp\Stage1.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Stage1_3.h">
+      <Filter>ヘッダー ファイル\Scene.cpp\Stage1.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Player.h">
+      <Filter>ヘッダー ファイル\Actor.h</Filter>
     </ClInclude>
     <ClInclude Include="Base_Actor.h">
       <Filter>ヘッダー ファイル\Actor.h</Filter>
     </ClInclude>
-    <ClInclude Include="Base_Scene.h">
-      <Filter>ヘッダー ファイル\Scene.h</Filter>
-    </ClInclude>
-    <ClInclude Include="Scene_Manager.h">
-      <Filter>ヘッダー ファイル\Scene.h</Filter>
-    </ClInclude>
-    <ClInclude Include="CSVReader.h">
-      <Filter>ヘッダー ファイル\Utility</Filter>
+    <ClInclude Include="..\..\..\..\team_Project\team_Project\team_Project\Vector2.h">
+      <Filter>ヘッダー ファイル\Utility.h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>

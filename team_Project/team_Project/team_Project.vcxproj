@@ -20,8 +20,8 @@
   </ItemGroup>
   <PropertyGroup Label="Globals">
     <VCProjectVersion>15.0</VCProjectVersion>
-    <ProjectGuid>{AD945502-E8EC-4075-9BC6-7463F3F90D60}</ProjectGuid>
-    <RootNamespace>teamProject</RootNamespace>
+    <ProjectGuid>{5b9bc5b0-ff04-4daa-bacf-eb68235f6935}</ProjectGuid>
+    <RootNamespace>team_Project</RootNamespace>
     <WindowsTargetPlatformVersion>10.0.17763.0</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -123,10 +123,10 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="..\..\..\..\team_Project\team_Project\team_Project\Vector2.cpp" />
     <ClCompile Include="Base_Actor.cpp" />
     <ClCompile Include="Base_Scene.cpp" />
     <ClCompile Include="Collision.cpp" />
-    <ClCompile Include="CSVReader.cpp" />
     <ClCompile Include="KeyInput.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -136,13 +136,12 @@
     <ClCompile Include="Stage1_2.cpp" />
     <ClCompile Include="Stage1_3.cpp" />
     <ClCompile Include="Title.cpp" />
-    <ClCompile Include="Vector2.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="..\..\..\..\team_Project\team_Project\team_Project\Vector2.h" />
     <ClInclude Include="Base_Actor.h" />
     <ClInclude Include="Base_Scene.h" />
     <ClInclude Include="Collision.h" />
-    <ClInclude Include="CSVReader.h" />
     <ClInclude Include="KeyInput.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Scene_Manager.h" />
@@ -151,7 +150,6 @@
     <ClInclude Include="Stage1_2.h" />
     <ClInclude Include="Stage1_3.h" />
     <ClInclude Include="Title.h" />
-    <ClInclude Include="Vector2.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

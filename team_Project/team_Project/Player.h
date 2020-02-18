@@ -1,61 +1,31 @@
 #pragma once
 #include<string>
-#include "Base_Actor.h"
+#include"Base_Actor.h"
 
 #define PLAYER_SIZE 32
 
-class Player//:public Base_Actor//Stage1.hに書かないと継承されん
+class Player
 {
-	using string = std::string;
-
 private:
-
 	//プレイヤー用の変数
-	int pos_X,//プレイヤーのポジションX
-		pos_Y,//プレイヤーのポジションY
-		Cr,//プレイヤーの色(デモ用)
-		velocity_X,//プレイヤーの移動量X
-		velocity_Y;//プレイヤーの移動量Y
+	int pos_X;
+	int pos_Y;
+	int Cr;
+	int velocity_X;
+	int velocity_Y;
 
 	int player_Tex;
 
-	bool isHit,//プレイヤーのヒットフラグ
-		 isDead;//プレイヤーの死亡フラグ
-
-	int player_1;
-
 public:
-	
+
 	Base_Actor base_Actor;
+
+	void Init();
+	void Update();
+	void Draw();
+	void Finish();
 
 	Player();
 	~Player();
-
-	int GetPlayer_1() { return player_1; }
-
-	int GetPlayerPosX() { return pos_X; }
-	void SetPlayerPosX(int pos_X);
-	int GetPlayerPosY() { return pos_Y; }
-	void SetPlayerPosY(int pos_Y);
-
-	void Init();//プレイヤー用の初期化用
-
-	void Update();//プレイヤーの移動用
-
-	void Draw();//プレイヤーの描画用
-
-	
-
-	//プレイヤーの座標のアクセッサ
-	//void SetPlayerPosX(int pos_X) { this->pos_X = pos_X; }
-	//int GetPlayerPosX() { return pos_X; }
-	//void SetPlayerPosY(int pos_Y) { this->pos_Y = pos_Y; }
-	//int GetPlayerPosY() { return pos_Y; }
-
-	//プレイヤーの移動量のアクセッサ
-	void SetPlayerVelocityX(int velocity_X) { this->velocity_X = velocity_X; }
-	int GetPlayerVelocityX() { return velocity_X; }
-	void SetPlayerVelocityY(int velocity_Y) { this->velocity_Y = velocity_Y; }
-	int GetPlayerVelocityY() { return velocity_Y; }
-
 };
+

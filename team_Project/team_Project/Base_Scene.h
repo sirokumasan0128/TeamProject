@@ -1,9 +1,8 @@
 #pragma once
-#include"Player.h"
+
 #define MAP_WIDTH 60
 #define MAP_HEIGHT 34
 #define BLOCK_SIZE 32
-
 
 class Base_Scene
 {
@@ -12,16 +11,13 @@ private:
 public:
 	Base_Scene();
 	~Base_Scene();
-	//=0は中身が空っぽという意味
 
+	virtual void Init() = 0;//必ず実装したいからvirtualを付ける
 
-	virtual void Init() = 0;//0をつけると実装しなければいけない
+	virtual void Update() = 0;//必ず実装したいからvirtualを付ける
 
-	virtual void Update() = 0;//継承させたいからvirtual
+	virtual void Draw() = 0;//必ず実装したいからvirtualを付ける
 
-	virtual void Draw() = 0;//継承させたいからvirtual
-
-	virtual void Finish() = 0;
-
+	virtual void Finish() = 0;//必ず実装したいからvirtualを付ける
 };
 

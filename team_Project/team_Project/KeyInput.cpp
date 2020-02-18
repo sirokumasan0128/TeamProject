@@ -3,14 +3,14 @@
 #include "KeyInput.h"
 
 
-void KeyInput::update()
+void KeyInput::Update()
 {
 	for (int i = 0; i < 256; i++)
 	{
 		oldkey[i] = currentkey[i];
 	}
 	GetHitKeyStateAll(currentkey);
-	
+
 }
 
 bool KeyInput::InputKeyTrigger(int key)

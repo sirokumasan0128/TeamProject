@@ -1,39 +1,39 @@
 #include<DxLib.h>
-#include"Scene_Manager.h"
-#include"Title.h"
+#include"Scene_manager.h"
+#include "Title.h"
 
-using namespace std;
+
 
 Title::Title()
-	:title_Tex(0),isGame_Start(false)
+	//:title_Tex(0),tex_Y(0),tex_X(0)
 {
-	//title_Tex = LoadGraph("");
 }
-
-
 
 void Title::Init()
 {
 	title_Tex = LoadGraph("title_Sample.png");
-
+	//画像のポジション用
+	tex_X = 0;
+	tex_Y = 0;
+	tex_Pos_X = &tex_X;
+	tex_Pos_Y = &tex_Y;
 }
 
 void Title::Update()
 {
-	keyInput.update();
-	Scene_Manager* scene_Manager;
-
+	keyInput.Update();
 	if (keyInput.InputKeyTrigger(KEY_INPUT_SPACE))
 	{
 		scene_Manager->Change_Scene(scene_Manager->STAGE1);
 	}
-
 }
 
 void Title::Draw()
 {
-
-	DrawGraph(0,0,title_Tex,TRUE);//タイトル画面の表示
+	//             ↓      ↓ポインタでない
+	//DrawGraph(int X,int Y,int GrHandle,TRUE);
+	//DrawGraph(*(&tex_X), *(&tex_Y), title_Tex, TRUE);//タイトル画面の表示
+	DrawGraph(*tex_Pos_X, *tex_Pos_Y, title_Tex, TRUE);//タイトル画面の表示
 
 }
 
@@ -44,5 +44,4 @@ void Title::Finish()
 
 Title::~Title()
 {
-
 }

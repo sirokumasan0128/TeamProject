@@ -1,6 +1,7 @@
 #include "DxLib.h"
-#include "Scene_Manager.h"
-#include "Base_Scene.h"
+#include"Scene_Manager.h"
+#include"Base_Scene.h"
+
 //シーン系
 #include"Title.h"
 #include"Stage1.h"
@@ -8,12 +9,10 @@
 #include"Stage1_2.h"
 #include"Stage1_3.h"
 
-//キャラクタ系
-#include"Player.h"
+//アクター系
 
-//入力係
+//Utility系
 #include"KeyInput.h"
-//#include""
 
 int WinMain(
 	_In_ HINSTANCE hInstance,
@@ -45,15 +44,10 @@ int WinMain(
 	SetWindowSizeExtendRate(1.0);
 
 	//画面の背景色を設定
-	SetBackgroundColor(0, 0, 0);
+	SetBackgroundColor(0xEF, 0xFF, 0xEF);
 
 	Scene_Manager* scene_Manager;
 	scene_Manager->Change_Scene(scene_Manager->TITLE);
-
-
-
-
-	KeyInput keyInput;
 
 	//DXライブラリの初期化
 	if (DxLib_Init() == -1)
@@ -62,22 +56,17 @@ int WinMain(
 		return -1;
 	}
 
-		scene_Manager->Init();
-
+	scene_Manager->Init();
+	
 	//永久ループを抜ける処理
 	while (1)//簡単なループ処理
 	{
-
 		ClearDrawScreen();
-
-		
 
 		scene_Manager->Update();
 		scene_Manager->Draw();
-
-
-
-		ScreenFlip(); 
+		
+		ScreenFlip();
 		WaitTimer(20);//20ミリ秒
 		if (ProcessMessage() == -1) break;//WindowsAPIのエラー処理
 		if (CheckHitKey(KEY_INPUT_ESCAPE) == 1)break;//DxLibの入力処理

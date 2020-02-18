@@ -1,13 +1,11 @@
 #pragma once
+#include"Base_Scene.h"
+#include"Collision.h"
+//#include"Player.h"
 
-#include "Base_Scene.h"
-#include "Player.h"
-#include "Collision.h"
-
-class Stage1_1 :public Base_Scene
+class Stage1_1
 {
 private:
-
 	//アセットのロード用
 	int ground_Block1;
 
@@ -20,7 +18,6 @@ private:
 	int MiniY;
 	int MaxX;
 	int MaxY;
-
 
 	//マップの描画用
 	int Stage1_MapInfo_Layer1[MAP_HEIGHT][MAP_WIDTH] =
@@ -61,11 +58,8 @@ private:
 		{0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,},
 	};
 
+
 public:
-
-	Collision collision;
-	Player player;
-
 	Stage1_1();
 	~Stage1_1();
 
@@ -73,5 +67,5 @@ public:
 	void Update();
 	void Draw();
 	void Finish();
-
 };
+
