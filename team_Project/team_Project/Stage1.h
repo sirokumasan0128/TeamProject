@@ -9,6 +9,9 @@ class Stage1:public Base_Scene
 {
 private:
 
+	int pos_X;//player‚É“n‚·—p
+	int pos_Y;//player‚É“n‚·—p
+
 public:
 	Stage1();
 	~Stage1();

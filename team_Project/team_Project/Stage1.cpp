@@ -2,9 +2,15 @@
 
 
 Stage1::Stage1()
-	:player (new Player())
+	:player(new Player())
 {
-	player->Init();
+	pos_X = 500;
+	pos_Y = 500;
+	player->Init(pos_X, pos_Y);
+	//‰Šú’l“ü—Í
+
+
+
 	stage1_1.Init();
 	stage1_2.Init();
 	stage1_3.Init();

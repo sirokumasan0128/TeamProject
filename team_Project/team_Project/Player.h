@@ -27,7 +27,7 @@ public:
 	Base_Actor base_Actor;
 	
 
-	void Init();
+	void Init(int pos_X,int pos_Y);
 	void Update();
 	void Draw();
 	void Finish();

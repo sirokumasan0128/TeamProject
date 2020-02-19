@@ -7,19 +7,19 @@ Player::Player()
 {
 }
 
-void Player::Init(int )
+void Player::Init( int pos_X,int pos_Y)
 {
 
 	//*Cr = (255,255,255);
-	pos_X = 0;
-	pos_Y = 0;
-	p_pos_X = &pos_X;
-	p_pos_Y = &pos_Y;
+	this->pos_X= pos_X;
+	this->pos_Y = pos_Y;
+
+	p_pos_X = &this->pos_X;
+	p_pos_Y = &this->pos_Y;
+
 	player_Tex = LoadGraph("player_Sample.png");
 	velocity_X = 0;
 	velocity_Y = 0;
-	p_velocity_X = &velocity_X;
-	p_velocity_Y = &velocity_Y;
 	isDead = false;
 }
 
@@ -47,8 +47,11 @@ void Player::Update()
 		velocity_Y += 6;
 	}
 
-	p_velocity_X = &velocity_X;
-	p_velocity_Y = &velocity_Y;
+	pos_X = pos_X + velocity_X;
+	pos_Y = pos_Y + velocity_Y;
+
+	//p_velocity_X = &velocity_X;
+	//p_velocity_Y = &velocity_Y;
 
 	//*pos_X = *pos_X; //+ velocity_X;
 	//pos_X = +velocity_X;
