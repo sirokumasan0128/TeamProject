@@ -10,15 +10,22 @@ private:
 	//プレイヤー用の変数
 	int pos_X;
 	int pos_Y;
-	int Cr;
+	int* p_pos_X;
+	int* p_pos_Y;
+	int* Cr;
 	int velocity_X;
 	int velocity_Y;
-
+	int* p_velocity_X;
+	int* p_velocity_Y;
 	int player_Tex;
+	int* p_player_Tex;
+
+	bool isDead;
 
 public:
 
 	Base_Actor base_Actor;
+	
 
 	void Init();
 	void Update();

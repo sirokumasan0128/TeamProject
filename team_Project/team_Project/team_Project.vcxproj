@@ -123,7 +123,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\team_Project\team_Project\team_Project\Vector2.cpp" />
+    <ClCompile Include="..\..\..\team_Project仕様\a\Vector2.cpp" />
     <ClCompile Include="Base_Actor.cpp" />
     <ClCompile Include="Base_Scene.cpp" />
     <ClCompile Include="Collision.cpp" />
@@ -138,7 +138,7 @@
     <ClCompile Include="Title.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\team_Project\team_Project\team_Project\Vector2.h" />
+    <ClInclude Include="..\..\..\team_Project仕様\a\Vector2.h" />
     <ClInclude Include="Base_Actor.h" />
     <ClInclude Include="Base_Scene.h" />
     <ClInclude Include="Collision.h" />

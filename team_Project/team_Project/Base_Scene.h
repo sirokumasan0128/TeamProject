@@ -1,6 +1,6 @@
 #pragma once
 
-#define MAP_WIDTH 60
+#define MAP_WIDTH 100
 #define MAP_HEIGHT 34
 #define BLOCK_SIZE 32
 

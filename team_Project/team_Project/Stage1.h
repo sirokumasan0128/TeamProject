@@ -1,5 +1,6 @@
 #pragma once
 #include"Base_Scene.h"
+#include"Player.h"
 #include"Stage1.h"
 #include"Stage1_1.h"
 #include"Stage1_2.h"
@@ -16,6 +17,8 @@ public:
 	void Update();
 	void Draw();
 	void Finish();
+
+	Player* player;
 
 	Stage1* stage1;
 	Stage1_1 stage1_1;

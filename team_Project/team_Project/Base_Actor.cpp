@@ -10,7 +10,7 @@ Base_Actor::Base_Actor()
 
 void Base_Actor::Init()
 {
-
+	
 }
 
 void Base_Actor::Update()

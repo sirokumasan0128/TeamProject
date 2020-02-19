@@ -44,7 +44,7 @@ int WinMain(
 	SetWindowSizeExtendRate(1.0);
 
 	//‰æ–Ê‚Ì”wŒiF‚ðÝ’è
-	SetBackgroundColor(0xEF, 0xFF, 0xEF);
+	SetBackgroundColor(0, 0, 0);
 
 	Scene_Manager* scene_Manager;
 	scene_Manager->Change_Scene(scene_Manager->TITLE);

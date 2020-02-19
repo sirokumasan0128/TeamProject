@@ -25,7 +25,7 @@ void Stage1_1::Update()
 
 void Stage1_1::Draw()
 {
-	for (int w = 0;w < MAP_HEIGHT;w++)
+	for (int w = 0;w < MAP_WIDTH;w++)
 	{
 		for (int h = 0;h < MAP_HEIGHT;h++)
 		{
