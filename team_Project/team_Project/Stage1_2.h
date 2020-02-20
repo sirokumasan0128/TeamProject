@@ -1,6 +1,7 @@
 #pragma once
 #include"Base_Scene.h"
 #include"Collision.h"
+#include "Player.h"
 
 class Stage1_2
 {
@@ -57,12 +58,16 @@ public:
 	~Stage1_2();
 
 	Collision collision;
+	Player* player;
+
 
 	void Init();
 	void Update();
 	void Stage1_Map_Hit();
 	void Draw();
 	void Finish();
+
+	void setPlayer(Player* p);
 
 };
 

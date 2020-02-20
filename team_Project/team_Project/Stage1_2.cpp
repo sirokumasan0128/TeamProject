@@ -21,48 +21,44 @@ void Stage1_2::Update()
 		for (int w = 0; w < MAP_WIDTH; w++)
 		{
 
-			//if (collision.Block_Collision_Up(
-			//	w*BLOCK_SIZE, h*BLOCK_SIZE,
-			//	player.GetPlayerPosX(),
-			//	player.GetPlayerPosY()) == true &&
-			//	Stage1_MapInfo_Layer2[h][w] != 100)
-			//{
+			if (collision.Block_Collision_Up(
+				w*BLOCK_SIZE, h*BLOCK_SIZE,
+				player->GetPlayerPosX(),
+				player->GetPlayerPosY()) == true &&
+				Stage1_MapInfo_Layer2[h][w] != 100)
+			{
 
-			//	//↓ここでポインタの互換性が得られなくなったのでポインタ使うの止めました
-			//	player.SetPlayerPosY(h * BLOCK_SIZE - 64);
+				player->SetPlayerPosY(h * BLOCK_SIZE - 64);
 
-			//	//DrawFormatString(0, 450, GetColor(255, 255, 255), "%d", player.GetPlayerVelocityY());
+			}
+			if (collision.Block_Collision_Bottom(w*BLOCK_SIZE, h*BLOCK_SIZE,
+				player->GetPlayerPosX(),
+				player->GetPlayerPosY()) == true &&
+				Stage1_MapInfo_Layer2[h][w] != 100)
+			{
 
-			//	//DrawFormatString(0, 60, GetColor(255, 255, 255), "%d\n%d", w*BLOCK_SIZE, h*BLOCK_SIZE);
-			//}
-			//if (collision.Block_Collision_Bottom(w*BLOCK_SIZE, h*BLOCK_SIZE,
-			//	player.GetPlayerPosX(),
-			//	player.GetPlayerPosY()) == true &&
-			//	Stage1_MapInfo_Layer2[h][w] != 100)
-			//{
+				player->SetPlayerPosY(h*BLOCK_SIZE);
 
-			//	player.SetPlayerPosY(h*BLOCK_SIZE);
+			}
 
-			//}
+			if (collision.Block_Collision_Right(w*BLOCK_SIZE, h*BLOCK_SIZE,
+				player->GetPlayerPosX(),
+				player->GetPlayerPosY()) == true &&
+				Stage1_MapInfo_Layer2[h][w] != 100)
+			{
 
-			//if (collision.Block_Collision_Right(w*BLOCK_SIZE, h*BLOCK_SIZE,
-			//	player.GetPlayerPosX(),
-			//	player.GetPlayerPosY()) == true &&
-			//	Stage1_MapInfo_Layer2[h][w] != 100)
-			//{
+				player->SetPlayerPosX(w*BLOCK_SIZE + 32);
+			}
 
-			//	player.SetPlayerPosX(w*BLOCK_SIZE + 32);
-			//}
+			if (collision.Block_Collision_Left(w*BLOCK_SIZE, h*BLOCK_SIZE,
+				player->GetPlayerPosX(),
+				player->GetPlayerPosY()) == true &&
+				Stage1_MapInfo_Layer2[h][w] != 100)
+			{
 
-			//if (collision.Block_Collision_Left(w*BLOCK_SIZE, h*BLOCK_SIZE,
-			//	player.GetPlayerPosX(),
-			//	player.GetPlayerPosY()) == true &&
-			//	Stage1_MapInfo_Layer2[h][w] != 100)
-			//{
+				player->SetPlayerPosX(w*BLOCK_SIZE - 32);
 
-			//	player.SetPlayerPosX(w*BLOCK_SIZE - 32);
-
-			//}
+			}
 
 		}
 	}
@@ -114,6 +110,11 @@ void Stage1_2::Draw()
 void Stage1_2::Finish()
 {
 
+}
+
+void Stage1_2::setPlayer(Player * p)
+{
+	player = p;
 }
 
 Stage1_2::~Stage1_2()

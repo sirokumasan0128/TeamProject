@@ -4,17 +4,19 @@
 Stage1::Stage1()
 	:player(new Player())
 {
-	pos_X = 500;
-	pos_Y = 500;
-	player->Init(pos_X, pos_Y);
 	//初期値入力
+	pos_X = 300;
+	pos_Y = 420 ;
+	player->Init(pos_X, pos_Y);
 
-
+	
 
 	stage1_1.Init();
 	stage1_2.Init();
 	stage1_3.Init();
 
+	//stage1_2にプレイヤーの値が渡る
+	stage1_2.setPlayer(player);
 }
 
 void Stage1::Init()
