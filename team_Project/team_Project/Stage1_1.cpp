@@ -25,13 +25,6 @@ void Stage1_1::Init()
 
 void Stage1_1::Update()
 {
-	for (int h = 0;h < MAP_HEIGHT;h++)
-	{
-		for (int w = 0;w < MAP_WIDTH;w++)
-		{
-			//
-		}
-	}
 
 
 	DrawFormatString(500, 0, GetColor(255, 255, 255), "%d プレイヤーのポジションX", player->GetPlayerPosX());
@@ -54,7 +47,47 @@ void Stage1_1::Draw()
 	{
 		for (int h = 0;h < MAP_HEIGHT;h++)
 		{
-			//ルーム1の大きさを表す
+
+			Room_LeftUpX = 0;
+			Room_LeftUpY = 0;
+			Room_RightDownX = MAP_WIDTH * BLOCK_SIZE;
+			Room_RightDownY = MAP_HEIGHT * BLOCK_SIZE;
+
+			//廊下の大きさを表す
+			if (Stage1_MapInfo_Layer1[h][w] == 1)
+			{
+
+
+				if (Room_LeftUpX < w)
+				{
+					Room_LeftUpX = w * BLOCK_SIZE;
+				}//最小値の代入X
+				if (Room_LeftUpY < h)
+				{
+					Room_LeftUpY = h * BLOCK_SIZE;
+				}//最小値の代入Y
+				if (Room_RightDownX >= w)
+				{
+					Room_RightDownX = w * BLOCK_SIZE;
+				}//最大値の代入X
+				if (Room_RightDownY >= h)
+				{
+					Room_RightDownY = h * BLOCK_SIZE;
+				}//最大値の代入Y
+
+				//部屋に入ったか入ってないかを知らべる
+				if (collision.Floor_Camera(
+					Room_LeftUpX, Room_LeftUpY,
+					Room_RightDownX, Room_RightDownY,
+					player->GetPlayerPosX(),
+					player->GetPlayerPosY()) == true)
+				{
+					place = isCorridor;
+
+				}
+			}
+
+			//ルーム2の大きさを表す
 			if (Stage1_MapInfo_Layer1[h][w] == 2)
 			{
 				if (Room_LeftUpX < w)
@@ -82,40 +115,34 @@ void Stage1_1::Draw()
 					player->GetPlayerPosY()) == true)
 				{
 					place = isRoom2;
-					//camera_StaggerX = SCREEN_WIDtH / 2 - (Room_RightDownX - Room_LeftUpX) / 2 / 2;//部屋2のWidthの半分のサイズ
-					//camera_StaggerY = SCREEN_HEIGHT / 2 - (Room_RightDownY - Room_LeftUpY) / 2 / 2;//部屋2のHeightの半分のサイズ
 
 				}
 			}
 
+
 			switch (place)
 			{
 			case Stage1_1::isCorridor:
-				block_Draw_PositionX = w * BLOCK_SIZE;
-				block_Draw_PositionY = h * BLOCK_SIZE;
-
+				camera_StaggerX = 0;
+				camera_StaggerY = 0;
 				break;
 			case Stage1_1::isRoom2:
-				block_Draw_PositionX = SCREEN_WIDtH / 2 - (Room_RightDownX - Room_LeftUpX) / 2 / 2;//部屋2のWidthの半分のサイズ
-				block_Draw_PositionY = SCREEN_HEIGHT / 2 - (Room_RightDownY - Room_LeftUpY) / 2 / 2;//部屋2のHeightの半分のサイズ
-				break;
-			default:
+				camera_StaggerX = 500;
+				camera_StaggerY = 500;
 				break;
 			}
 
-
-
+			//下にレイヤー1のマップチップ描画を入れる
 			if (Stage1_MapInfo_Layer1[h][w] == 1)
 			{
-				//下にレイヤー1のマップチップの描画用を入れる
-				DrawGraph(block_Draw_PositionX,
-					block_Draw_PositionY, ground_Block1, TRUE);
+
+				DrawGraph(w*BLOCK_SIZE + camera_StaggerX,
+					h*BLOCK_SIZE + camera_StaggerY, ground_Block1, TRUE);
 			}
 			if (Stage1_MapInfo_Layer1[h][w] == 2)
 			{
-				//下にレイヤー1のマップチップの描画用を入れる
-				DrawGraph(block_Draw_PositionX,
-					block_Draw_PositionY, ground_Block1, TRUE);
+				DrawGraph(w*BLOCK_SIZE + camera_StaggerX,
+					h*BLOCK_SIZE + camera_StaggerY, ground_Block1, TRUE);
 			}
 
 		}
