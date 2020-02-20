@@ -112,9 +112,9 @@ void Stage1_2::Finish()
 
 }
 
-void Stage1_2::setPlayer(Player * p)
+void Stage1_2::setPlayer(Player * p_2)
 {
-	player = p;
+	player = p_2;
 }
 
 Stage1_2::~Stage1_2()

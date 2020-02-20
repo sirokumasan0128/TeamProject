@@ -3,6 +3,8 @@
 #define MAP_WIDTH 100
 #define MAP_HEIGHT 34
 #define BLOCK_SIZE 32
+#define SCREEN_WIDtH 1920
+#define SCREEN_HEIGHT 1080
 
 class Base_Scene
 {

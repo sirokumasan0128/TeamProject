@@ -170,10 +170,11 @@ bool Collision::Floor_Camera(
 	int Player_PosX,
 	int Player_PosY)
 {
-	if (Room_LeftUpX >= Player_PosX &&
-		Room_RightDownX <= Player_PosX &&
-		Room_LeftUpY >= Player_PosY &&
-		Room_LeftUpY <= Player_PosY)
+
+	if (Player_PosX >= Room_LeftUpX &&
+		Player_PosX <= Room_RightDownX &&
+		Player_PosY >= Room_LeftUpY &&
+		Player_PosY <= Room_RightDownY )
 	{
 		return true;
 	}

@@ -5,6 +5,8 @@
 
 Stage1_3::Stage1_3()
 {
+	ground_Block3 = LoadGraph("ground_Block_Sample4.png");
+
 }
 
 void Stage1_3::Init()
@@ -52,6 +54,8 @@ void Stage1_3::Finish()
 {
 
 }
+
+
 
 Stage1_3::~Stage1_3()
 {
