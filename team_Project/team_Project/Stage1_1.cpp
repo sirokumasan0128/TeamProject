@@ -119,6 +119,69 @@ void Stage1_1::Draw()
 				}
 			}
 
+			//ルーム3の大きさを表す
+			if (Stage1_MapInfo_Layer1[h][w] == 3)
+			{
+				if (Room_LeftUpX < w)
+				{
+					Room_LeftUpX = w * BLOCK_SIZE;
+				}//最小値の代入X
+				if (Room_LeftUpY < h)
+				{
+					Room_LeftUpY = h * BLOCK_SIZE;
+				}//最小値の代入Y
+				if (Room_RightDownX >= w)
+				{
+					Room_RightDownX = w * BLOCK_SIZE;
+				}//最大値の代入X
+				if (Room_RightDownY >= h)
+				{
+					Room_RightDownY = h * BLOCK_SIZE;
+				}//最大値の代入Y
+
+				//部屋に入ったか入ってないかを知らべる
+				if (collision.Floor_Camera(
+					Room_LeftUpX, Room_LeftUpY,
+					Room_RightDownX, Room_RightDownY,
+					player->GetPlayerPosX(),
+					player->GetPlayerPosY()) == true)
+				{
+					place = isRoom3;
+
+				}
+			}
+			//ルーム3の大きさを表す
+			if (Stage1_MapInfo_Layer1[h][w] == 4)
+			{
+				if (Room_LeftUpX < w)
+				{
+					Room_LeftUpX = w * BLOCK_SIZE;
+				}//最小値の代入X
+				if (Room_LeftUpY < h)
+				{
+					Room_LeftUpY = h * BLOCK_SIZE;
+				}//最小値の代入Y
+				if (Room_RightDownX >= w)
+				{
+					Room_RightDownX = w * BLOCK_SIZE;
+				}//最大値の代入X
+				if (Room_RightDownY >= h)
+				{
+					Room_RightDownY = h * BLOCK_SIZE;
+				}//最大値の代入Y
+
+				//部屋に入ったか入ってないかを知らべる
+				if (collision.Floor_Camera(
+					Room_LeftUpX, Room_LeftUpY,
+					Room_RightDownX, Room_RightDownY,
+					player->GetPlayerPosX(),
+					player->GetPlayerPosY()) == true)
+				{
+					place = isRoom4;
+
+				}
+			}
+
 
 			switch (place)
 			{
@@ -127,9 +190,18 @@ void Stage1_1::Draw()
 				camera_StaggerY = 0;
 				break;
 			case Stage1_1::isRoom2:
+				camera_StaggerX = 650;
+				camera_StaggerY = 400;
+				break;
+			case Stage1_1::isRoom3:
 				camera_StaggerX = 500;
+				camera_StaggerY = -500;
+				break;
+			case Stage1_1::isRoom4:
+				camera_StaggerX = -500;
 				camera_StaggerY = 500;
 				break;
+
 			}
 
 			//下にレイヤー1のマップチップ描画を入れる
@@ -140,6 +212,16 @@ void Stage1_1::Draw()
 					h*BLOCK_SIZE + camera_StaggerY, ground_Block1, TRUE);
 			}
 			if (Stage1_MapInfo_Layer1[h][w] == 2)
+			{
+				DrawGraph(w*BLOCK_SIZE + camera_StaggerX,
+					h*BLOCK_SIZE + camera_StaggerY, ground_Block1, TRUE);
+			}
+			if (Stage1_MapInfo_Layer1[h][w] == 3)
+			{
+				DrawGraph(w*BLOCK_SIZE + camera_StaggerX,
+					h*BLOCK_SIZE + camera_StaggerY, ground_Block1, TRUE);
+			}
+			if (Stage1_MapInfo_Layer1[h][w] == 4)
 			{
 				DrawGraph(w*BLOCK_SIZE + camera_StaggerX,
 					h*BLOCK_SIZE + camera_StaggerY, ground_Block1, TRUE);
