@@ -13,9 +13,6 @@ private:
 	int block_Draw_PositionX;
 	int block_Draw_PositionY;
 
-	//部屋の座標ずらしよう
-	int camera_StaggerX;
-	int camera_StaggerY;
 
 	//部屋の出入り判定用
 	int Room_LeftUpX;
@@ -69,6 +66,10 @@ public:
 
 	Collision collision;
 	Player* player;
+
+	//部屋の座標ずらしよう
+	int camera_StaggerX;
+	int camera_StaggerY;
 
 	enum Place {
 		isCorridor,

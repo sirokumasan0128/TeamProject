@@ -242,6 +242,7 @@ void Stage1_1::setPlayer(Player * p_1)
 }
 
 
+
 Stage1_1::~Stage1_1()
 {
 }

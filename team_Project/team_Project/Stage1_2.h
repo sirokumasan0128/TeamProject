@@ -12,11 +12,11 @@ private:
 	int* pos_Y;
 
 	//アセットのロード用
-	int ground_tex2;
+	int ground_Tex2;
 
-	//部屋の座標ずらしよう
-	int camera_StaggerX;
-	int camera_StaggerY;
+	////部屋の座標ずらしよう
+	//int camera_StaggerX;
+	//int camera_StaggerY;
 
 
 	//マップの描画用
@@ -65,6 +65,7 @@ public:
 
 	Collision collision;
 	Player* player;
+	Stage1_1 stage1_1;
 
 	void Init();
 	void Update();
@@ -73,7 +74,6 @@ public:
 	void Finish();
 
 	void setPlayer(Player* p_2);
-
 
 
 };

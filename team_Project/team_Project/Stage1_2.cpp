@@ -5,12 +5,14 @@
 using namespace std;
 
 Stage1_2::Stage1_2()
+	//:camera_StaggerX(0),camera_StaggerY(0),
+	:ground_Tex2(0)
 {
 }
 
 void Stage1_2::Init()
 {
-	ground_tex2 = LoadGraph("ground_Block_Sample2.png");
+	ground_Tex2 = LoadGraph("ground_Block_Sample2.png");
 
 }
 
@@ -82,26 +84,26 @@ void Stage1_2::Draw()
 			if (Stage1_MapInfo_Layer2[h][w] == 102)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
-				DrawGraph(w*BLOCK_SIZE,
-					h*BLOCK_SIZE, ground_tex2, TRUE);
+				DrawGraph(w*BLOCK_SIZE + stage1_1.camera_StaggerX,
+					h*BLOCK_SIZE +stage1_1.camera_StaggerY, ground_Tex2, TRUE);
 			}
 			if (Stage1_MapInfo_Layer2[h][w] == 103)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
-				DrawGraph(w*BLOCK_SIZE,
-					h*BLOCK_SIZE, ground_tex2, TRUE);
+				DrawGraph(w*BLOCK_SIZE+stage1_1.camera_StaggerX,
+					h*BLOCK_SIZE+stage1_1.camera_StaggerY, ground_Tex2, TRUE);
 			}
 			if (Stage1_MapInfo_Layer2[h][w] == 104)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
 				DrawGraph(w*BLOCK_SIZE,
-					h*BLOCK_SIZE, ground_tex2, TRUE);
+					h*BLOCK_SIZE, ground_Tex2, TRUE);
 			}
 			if (Stage1_MapInfo_Layer2[h][w] == 109)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
 				DrawGraph(w*BLOCK_SIZE,
-					h*BLOCK_SIZE, ground_tex2, TRUE);
+					h*BLOCK_SIZE, ground_Tex2, TRUE);
 			}
 
 
@@ -120,7 +122,6 @@ void Stage1_2::setPlayer(Player * p_2)
 {
 	player = p_2;
 }
-
 
 
 Stage1_2::~Stage1_2()
