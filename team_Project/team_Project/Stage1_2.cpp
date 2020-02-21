@@ -72,8 +72,17 @@ void Stage1_2::Stage1_Map_Hit()
 
 }
 
-void Stage1_2::Draw()
+void Stage1_2::Draw(int camera_StaggerX,int camera_StaggerY)
 {
+
+	stage1_2_Camera_StaggerX = camera_StaggerX;
+	stage1_2_Camera_StaggerY = camera_StaggerY;
+
+	DrawFormatString(500, 90, GetColor(255, 255, 255), "%d カメラずらしX", stage1_2_Camera_StaggerX);
+	DrawFormatString(500, 105, GetColor(255, 255, 255), "%d カメラずらしY", stage1_2_Camera_StaggerY);
+	DrawFormatString(500, 120, GetColor(255, 255, 255), "%d カメラずらしX", camera_StaggerX);
+	DrawFormatString(500, 135, GetColor(255, 255, 255), "%d カメラずらしY", camera_StaggerY);
+
 	for (int h = 0; h < MAP_HEIGHT; h++)
 	{
 		for (int w = 0; w < MAP_WIDTH; w++)
@@ -84,14 +93,14 @@ void Stage1_2::Draw()
 			if (Stage1_MapInfo_Layer2[h][w] == 102)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
-				DrawGraph(w*BLOCK_SIZE + stage1_1.camera_StaggerX,
-					h*BLOCK_SIZE +stage1_1.camera_StaggerY, ground_Tex2, TRUE);
+				DrawGraph(w*BLOCK_SIZE + stage1_2_Camera_StaggerX ,
+					h*BLOCK_SIZE + stage1_2_Camera_StaggerY, ground_Tex2, TRUE);
 			}
 			if (Stage1_MapInfo_Layer2[h][w] == 103)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
-				DrawGraph(w*BLOCK_SIZE+stage1_1.camera_StaggerX,
-					h*BLOCK_SIZE+stage1_1.camera_StaggerY, ground_Tex2, TRUE);
+				DrawGraph(w*BLOCK_SIZE,
+					h*BLOCK_SIZE, ground_Tex2, TRUE);
 			}
 			if (Stage1_MapInfo_Layer2[h][w] == 104)
 			{

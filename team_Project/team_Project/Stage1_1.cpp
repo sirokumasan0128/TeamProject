@@ -19,7 +19,7 @@ void Stage1_1::Init()
 {
 	ground_Block1 = LoadGraph("ground_Block_Sample.png");
 
-	place = isCorridor;
+	m_place = isCorridor;
 
 }
 
@@ -36,27 +36,39 @@ void Stage1_1::Update()
 	DrawFormatString(500, 60, GetColor(255, 255, 255), "%d 右下の座標X", Room_RightDownX);
 	DrawFormatString(500, 75, GetColor(255, 255, 255), "%d 右下の座標Y", Room_RightDownY);
 
-	DrawFormatString(500, 90, GetColor(255, 255, 255), "%d カメラずらしX", camera_StaggerX);
-	DrawFormatString(500, 105, GetColor(255, 255, 255), "%d カメラずらしY", camera_StaggerY);
 
 
 }
-void Stage1_1::Draw()
+
+//int Stage1_1::camera_Stagger(int place)
+//{
+//	for (int w = 0;w < MAP_WIDTH;w++)
+//	{
+//		for (int h = 0;h < MAP_HEIGHT;h++)
+//		{
+//
+//
+//		}
+//
+//
+//	}
+//}
+
+void Stage1_1::Draw(int place)
 {
 	for (int w = 0;w < MAP_WIDTH;w++)
 	{
 		for (int h = 0;h < MAP_HEIGHT;h++)
 		{
 
-			Room_LeftUpX = 0;
-			Room_LeftUpY = 0;
-			Room_RightDownX = MAP_WIDTH * BLOCK_SIZE;
-			Room_RightDownY = MAP_HEIGHT * BLOCK_SIZE;
+			//Room_LeftUpX = 0;
+			//Room_LeftUpY = 0;
+			//Room_RightDownX = MAP_WIDTH * BLOCK_SIZE;
+			//Room_RightDownY = MAP_HEIGHT * BLOCK_SIZE;
 
 			//廊下の大きさを表す
 			if (Stage1_MapInfo_Layer1[h][w] == 1)
 			{
-
 
 				if (Room_LeftUpX < w)
 				{
@@ -82,8 +94,7 @@ void Stage1_1::Draw()
 					player->GetPlayerPosX(),
 					player->GetPlayerPosY()) == true)
 				{
-					place = isCorridor;
-
+					m_place = isCorridor;
 				}
 			}
 
@@ -114,7 +125,7 @@ void Stage1_1::Draw()
 					player->GetPlayerPosX(),
 					player->GetPlayerPosY()) == true)
 				{
-					place = isRoom2;
+					m_place = isRoom2;
 
 				}
 			}
@@ -146,10 +157,11 @@ void Stage1_1::Draw()
 					player->GetPlayerPosX(),
 					player->GetPlayerPosY()) == true)
 				{
-					place = isRoom3;
+					m_place = isRoom3;
 
 				}
 			}
+
 			//ルーム3の大きさを表す
 			if (Stage1_MapInfo_Layer1[h][w] == 4)
 			{
@@ -177,13 +189,12 @@ void Stage1_1::Draw()
 					player->GetPlayerPosX(),
 					player->GetPlayerPosY()) == true)
 				{
-					place = isRoom4;
+					m_place = isRoom4;
 
 				}
 			}
 
-
-			switch (place)
+			switch (m_place)
 			{
 			case Stage1_1::isCorridor:
 				camera_StaggerX = 0;
@@ -201,9 +212,19 @@ void Stage1_1::Draw()
 				camera_StaggerX = -500;
 				camera_StaggerY = 500;
 				break;
-
 			}
 
+
+		}
+	}
+
+	place = m_place;
+	//return place;
+
+	for (int w = 0;w < MAP_WIDTH;w++)
+	{
+		for (int h = 0;h < MAP_HEIGHT;h++)
+		{
 			//下にレイヤー1のマップチップ描画を入れる
 			if (Stage1_MapInfo_Layer1[h][w] == 1)
 			{
@@ -229,8 +250,8 @@ void Stage1_1::Draw()
 
 		}
 	}
-}
 
+}
 
 void Stage1_1::Finish()
 {

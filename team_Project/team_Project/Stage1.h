@@ -22,6 +22,21 @@ public:
 	void Draw();
 	void Finish();
 
+	enum Place {
+		isCorridor,
+		isRoom2,
+		isRoom3,
+		isRoom4,
+	};
+
+	 
+	
+	Place place;
+	Place e_place;
+
+	int camera_StaggerX;//ステージずらす用X
+	int camera_StaggerY;//ステージずらす用Y
+
 	Player* player;
 
 	Stage1* stage1;

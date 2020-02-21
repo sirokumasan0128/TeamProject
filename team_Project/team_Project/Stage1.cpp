@@ -2,14 +2,14 @@
 
 
 Stage1::Stage1()
-	:player(new Player())
+	:player(new Player()),
+	camera_StaggerX(0),
+	camera_StaggerY(0)
 {
 	//‰Šú’l“ü—Í
 	pos_X = 300;
-	pos_Y = 420 ;
+	pos_Y = 420;
 	player->Init(pos_X, pos_Y);
-
-	
 
 	stage1_1.Init();
 	stage1_2.Init();
@@ -30,6 +30,8 @@ void Stage1::Update()
 {
 	player->Update();
 
+	//stage1_1.camera_Stagger(place);
+
 	stage1_1.Update();
 	stage1_2.Update();
 	stage1_3.Update();
@@ -38,8 +40,29 @@ void Stage1::Update()
 
 void Stage1::Draw()
 {
-	stage1_1.Draw();
-	stage1_2.Draw();
+	stage1_1.Draw(place);
+	switch (place)
+	{
+	case Stage1::isCorridor:
+		camera_StaggerX = 0;
+		camera_StaggerY = 0;
+		break;
+	case Stage1::isRoom2:
+		camera_StaggerX = 650;
+		camera_StaggerY = 400;
+		break;
+	case Stage1::isRoom3:
+		camera_StaggerX = 500;
+		camera_StaggerY = -500;
+		break;
+	case Stage1::isRoom4:
+		camera_StaggerX = -500;
+		camera_StaggerY = 500;
+		break;
+	}
+
+
+	stage1_2.Draw(this->camera_StaggerX, this->camera_StaggerY);
 	player->Draw();
 	stage1_3.Draw();
 }

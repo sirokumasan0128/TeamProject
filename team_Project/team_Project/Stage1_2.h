@@ -2,7 +2,9 @@
 #include"Base_Scene.h"
 #include"Collision.h"
 #include "Player.h"
+//#include "Stage1.h"
 #include "Stage1_1.h"
+
 
 class Stage1_2
 {
@@ -15,8 +17,8 @@ private:
 	int ground_Tex2;
 
 	////部屋の座標ずらしよう
-	//int camera_StaggerX;
-	//int camera_StaggerY;
+	int stage1_2_Camera_StaggerX;
+	int stage1_2_Camera_StaggerY;
 
 
 	//マップの描画用
@@ -70,7 +72,7 @@ public:
 	void Init();
 	void Update();
 	void Stage1_Map_Hit();
-	void Draw();
+	void Draw(int camera_StaggerX,int camera_StaggerY);
 	void Finish();
 
 	void setPlayer(Player* p_2);
