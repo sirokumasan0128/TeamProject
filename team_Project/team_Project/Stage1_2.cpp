@@ -78,6 +78,7 @@ void Stage1_2::Draw()
 		{
 			//vector<int> Block_Position = { w*BLOCK_SIZE,h*BLOCK_SIZE };
 
+
 			if (Stage1_MapInfo_Layer2[h][w] == 102)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
@@ -102,6 +103,9 @@ void Stage1_2::Draw()
 				DrawGraph(w*BLOCK_SIZE,
 					h*BLOCK_SIZE, ground_tex2, TRUE);
 			}
+
+
+
 		}
 	}
 
@@ -116,6 +120,8 @@ void Stage1_2::setPlayer(Player * p_2)
 {
 	player = p_2;
 }
+
+
 
 Stage1_2::~Stage1_2()
 {

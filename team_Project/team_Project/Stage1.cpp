@@ -19,7 +19,6 @@ Stage1::Stage1()
 	stage1_1.setPlayer(player);
 	//stage1_2にプレイヤーの値が渡る
 	stage1_2.setPlayer(player);
-
 }
 
 void Stage1::Init()

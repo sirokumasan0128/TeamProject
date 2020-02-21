@@ -2,6 +2,7 @@
 #include"Base_Scene.h"
 #include"Collision.h"
 #include "Player.h"
+#include "Stage1_1.h"
 
 class Stage1_2
 {
@@ -12,6 +13,11 @@ private:
 
 	//アセットのロード用
 	int ground_tex2;
+
+	//部屋の座標ずらしよう
+	int camera_StaggerX;
+	int camera_StaggerY;
+
 
 	//マップの描画用
 	int Stage1_MapInfo_Layer2[MAP_HEIGHT][MAP_WIDTH] =
@@ -60,7 +66,6 @@ public:
 	Collision collision;
 	Player* player;
 
-
 	void Init();
 	void Update();
 	void Stage1_Map_Hit();
@@ -68,6 +73,8 @@ public:
 	void Finish();
 
 	void setPlayer(Player* p_2);
+
+
 
 };
 

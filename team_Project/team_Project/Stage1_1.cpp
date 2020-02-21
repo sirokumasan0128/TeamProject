@@ -231,6 +231,7 @@ void Stage1_1::Draw()
 	}
 }
 
+
 void Stage1_1::Finish()
 {
 }

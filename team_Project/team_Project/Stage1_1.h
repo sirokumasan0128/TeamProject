@@ -84,7 +84,9 @@ public:
 	void Draw();
 	void Finish();
 
+
 	void setPlayer(Player* p_1);
+
 
 };
 

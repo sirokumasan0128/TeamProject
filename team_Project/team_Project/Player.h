@@ -37,6 +37,7 @@ public:
 	int GetPlayerPosY() { return pos_Y; }
 	void SetPlayerPosY(int pos_Y);
 
+	
 
 	Player();
 	~Player();
