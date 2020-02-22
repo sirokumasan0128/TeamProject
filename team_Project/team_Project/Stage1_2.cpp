@@ -5,8 +5,8 @@
 using namespace std;
 
 Stage1_2::Stage1_2()
-	//:camera_StaggerX(0),camera_StaggerY(0),
-	:ground_Tex2(0)
+	:stage1_2_Camera_StaggerX(0),stage1_2_Camera_StaggerY(0),
+	ground_Tex2(0)
 {
 }
 
@@ -24,7 +24,7 @@ void Stage1_2::Update()
 		{
 
 			if (collision.Block_Collision_Up(
-				w*BLOCK_SIZE, h*BLOCK_SIZE,
+				w*BLOCK_SIZE+, h*BLOCK_SIZE,
 				player->GetPlayerPosX(),
 				player->GetPlayerPosY()) == true &&
 				Stage1_MapInfo_Layer2[h][w] != 100)
@@ -72,11 +72,11 @@ void Stage1_2::Stage1_Map_Hit()
 
 }
 
-void Stage1_2::Draw()
+void Stage1_2::Draw(int camera_StaggerX,int camera_StaggerY)
 {
 
-	//stage1_2_Camera_StaggerX = camera_StaggerX;
-	//stage1_2_Camera_StaggerY = camera_StaggerY;
+	stage1_2_Camera_StaggerX = camera_StaggerX;
+	stage1_2_Camera_StaggerY = camera_StaggerY;
 
 	//DrawFormatString(500, 90, GetColor(255, 255, 255), "%d ƒJƒƒ‰‚¸‚ç‚µX", stage1_2_Camera_StaggerX);
 	//DrawFormatString(500, 105, GetColor(255, 255, 255), "%d ƒJƒƒ‰‚¸‚ç‚µY", stage1_2_Camera_StaggerY);

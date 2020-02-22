@@ -19,7 +19,7 @@ void Stage1_1::Init()
 {
 	ground_Block1 = LoadGraph("ground_Block_Sample.png");
 
-	//m_place = isCorridor;
+	m_place = isCorridor;
 
 }
 
@@ -27,36 +27,12 @@ void Stage1_1::Update()
 {
 
 
-	DrawFormatString(500, 0, GetColor(255, 255, 255), "%d プレイヤーのポジションX", player->GetPlayerPosX());
-	DrawFormatString(500, 15, GetColor(255, 255, 255), "%d プレイヤーのポジションY", player->GetPlayerPosY());
-
-	DrawFormatString(500, 30, GetColor(255, 255, 255), "%d 左上の座標X", Room_LeftUpX);
-	DrawFormatString(500, 45, GetColor(255, 255, 255), "%d 左上の座標Y", Room_LeftUpY);
-
-	DrawFormatString(500, 60, GetColor(255, 255, 255), "%d 右下の座標X", Room_RightDownX);
-	DrawFormatString(500, 75, GetColor(255, 255, 255), "%d 右下の座標Y", Room_RightDownY);
-
 
 
 }
 
-//int Stage1_1::camera_Stagger(int place)
-//{
-//
-//	place = m_place;
-//	return place;
-//
-//
-//
-//}
-
-
-
-
-
-void Stage1_1::Draw()
+int Stage1_1::camera_Stagger(int place)
 {
-
 
 	for (int w = 0;w < MAP_WIDTH;w++)
 	{
@@ -94,9 +70,9 @@ void Stage1_1::Draw()
 					player->GetPlayerPosX(),
 					player->GetPlayerPosY()) == true)
 				{
-					//m_place = isCorridor;
-					camera_StaggerX = 0;
-					camera_StaggerY = 0;
+					m_place = isCorridor;
+					//camera_StaggerX = 0;
+					//camera_StaggerY = 0;
 
 				}
 			}
@@ -129,9 +105,9 @@ void Stage1_1::Draw()
 					player->GetPlayerPosX(),
 					player->GetPlayerPosY()) == true)
 				{
-					//m_place = isCorridor;
-					camera_StaggerX = 650;
-					camera_StaggerY = 400;
+					m_place = isRoom2;
+					//camera_StaggerX = 650;
+				    //camera_StaggerY = 400;
 
 				}
 			}
@@ -164,9 +140,9 @@ void Stage1_1::Draw()
 					player->GetPlayerPosX(),
 					player->GetPlayerPosY()) == true)
 				{
-					//m_place = isRoom3;
-					camera_StaggerX = 500;
-					camera_StaggerY = -500;
+					m_place = isRoom3;
+					//camera_StaggerX = 500;
+					//camera_StaggerY = -500;
 
 				}
 			}
@@ -198,36 +174,51 @@ void Stage1_1::Draw()
 					player->GetPlayerPosX(),
 					player->GetPlayerPosY()) == true)
 				{
-					//m_place = isRoom4;
-					camera_StaggerX = -500;
-					camera_StaggerY = 500;
+					m_place = isRoom4;
+					//camera_StaggerX = -500;
+					//camera_StaggerY = 500;
 
 				}
 			}
 
-			//switch (m_place)
-			//{
-			//case Stage1_1::isCorridor:
-			//	camera_StaggerX = 0;
-			//	camera_StaggerY = 0;
-			//	break;
-			//case Stage1_1::isRoom2:
-			//	camera_StaggerX = 650;
-			//	camera_StaggerY = 400;
-			//	break;
-			//case Stage1_1::isRoom3:
-			//	camera_StaggerX = 500;
-			//	camera_StaggerY = -500;
-			//	break;
-			//case Stage1_1::isRoom4:
-			//	camera_StaggerX = -500;
-			//	camera_StaggerY = 500;
-			//	break;
-			//}
+			switch (m_place)
+			{
+			case Stage1_1::isCorridor:
+				camera_StaggerX = 0;
+				camera_StaggerY = 0;
+				break;
+			case Stage1_1::isRoom2:
+				camera_StaggerX = 650;
+				camera_StaggerY = 400;
+				break;
+			case Stage1_1::isRoom3:
+				camera_StaggerX = 500;
+				camera_StaggerY = -500;
+				break;
+			case Stage1_1::isRoom4:
+				camera_StaggerX = -500;
+				camera_StaggerY = 500;
+				break;
+			}
 
 
 		}
 	}
+
+
+	place = m_place;
+	DrawFormatString(500, 0, GetColor(255, 255, 255), "%d Stage1_1内のplace", place);
+	return place;
+
+	   
+}
+
+
+
+
+
+void Stage1_1::Draw()
+{
 
 	for (int w = 0;w < MAP_WIDTH;w++)
 	{
