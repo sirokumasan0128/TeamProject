@@ -20,6 +20,10 @@ private:
 	int Room_RightDownX;
 	int Room_RightDownY;
 
+	//部屋の座標ずらしよう
+	int camera_StaggerX;
+	int camera_StaggerY;
+
 	//マップの描画用
 	int Stage1_MapInfo_Layer1[MAP_HEIGHT][MAP_WIDTH] =
 	{
@@ -67,9 +71,6 @@ public:
 	Collision collision;
 	Player* player;
 
-	//部屋の座標ずらしよう
-	int camera_StaggerX;
-	int camera_StaggerY;
 
 	enum Place {
 		isCorridor,
@@ -83,7 +84,7 @@ public:
 	void Init();
 	void Update();
 	//int camera_Stagger(int place);
-	void Draw(int e_place);
+	void Draw();
 	void Finish();
 
 

@@ -72,16 +72,16 @@ void Stage1_2::Stage1_Map_Hit()
 
 }
 
-void Stage1_2::Draw(int camera_StaggerX,int camera_StaggerY)
+void Stage1_2::Draw()
 {
 
-	stage1_2_Camera_StaggerX = camera_StaggerX;
-	stage1_2_Camera_StaggerY = camera_StaggerY;
+	//stage1_2_Camera_StaggerX = camera_StaggerX;
+	//stage1_2_Camera_StaggerY = camera_StaggerY;
 
-	DrawFormatString(500, 90, GetColor(255, 255, 255), "%d カメラずらしX", stage1_2_Camera_StaggerX);
-	DrawFormatString(500, 105, GetColor(255, 255, 255), "%d カメラずらしY", stage1_2_Camera_StaggerY);
-	DrawFormatString(500, 120, GetColor(255, 255, 255), "%d カメラずらしX", camera_StaggerX);
-	DrawFormatString(500, 135, GetColor(255, 255, 255), "%d カメラずらしY", camera_StaggerY);
+	//DrawFormatString(500, 90, GetColor(255, 255, 255), "%d カメラずらしX", stage1_2_Camera_StaggerX);
+	//DrawFormatString(500, 105, GetColor(255, 255, 255), "%d カメラずらしY", stage1_2_Camera_StaggerY);
+	//DrawFormatString(500, 120, GetColor(255, 255, 255), "%d カメラずらしX", camera_StaggerX);
+	//DrawFormatString(500, 135, GetColor(255, 255, 255), "%d カメラずらしY", camera_StaggerY);
 
 	for (int h = 0; h < MAP_HEIGHT; h++)
 	{

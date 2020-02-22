@@ -72,7 +72,8 @@ public:
 	void Init();
 	void Update();
 	void Stage1_Map_Hit();
-	void Draw(int camera_StaggerX,int camera_StaggerY);
+	//void Draw(int camera_StaggerX, int camera_StaggerY);
+	void Draw();
 	void Finish();
 
 	void setPlayer(Player* p_2);

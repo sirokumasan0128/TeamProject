@@ -19,7 +19,7 @@ void Stage1_1::Init()
 {
 	ground_Block1 = LoadGraph("ground_Block_Sample.png");
 
-	m_place = isCorridor;
+	//m_place = isCorridor;
 
 }
 
@@ -42,30 +42,30 @@ void Stage1_1::Update()
 
 //int Stage1_1::camera_Stagger(int place)
 //{
-//	for (int w = 0;w < MAP_WIDTH;w++)
-//	{
-//		for (int h = 0;h < MAP_HEIGHT;h++)
-//		{
+//
+//	place = m_place;
+//	return place;
 //
 //
-//		}
 //
-//
-//	}
 //}
 
-void Stage1_1::Draw(int place)
+
+
+
+
+void Stage1_1::Draw()
 {
+
+
 	for (int w = 0;w < MAP_WIDTH;w++)
 	{
 		for (int h = 0;h < MAP_HEIGHT;h++)
 		{
-
-			//Room_LeftUpX = 0;
-			//Room_LeftUpY = 0;
-			//Room_RightDownX = MAP_WIDTH * BLOCK_SIZE;
-			//Room_RightDownY = MAP_HEIGHT * BLOCK_SIZE;
-
+			Room_LeftUpX = 0;
+			Room_LeftUpY = 0;
+			Room_RightDownX = MAP_WIDTH * BLOCK_SIZE;
+			Room_RightDownY = MAP_HEIGHT * BLOCK_SIZE;
 			//廊下の大きさを表す
 			if (Stage1_MapInfo_Layer1[h][w] == 1)
 			{
@@ -94,13 +94,17 @@ void Stage1_1::Draw(int place)
 					player->GetPlayerPosX(),
 					player->GetPlayerPosY()) == true)
 				{
-					m_place = isCorridor;
+					//m_place = isCorridor;
+					camera_StaggerX = 0;
+					camera_StaggerY = 0;
+
 				}
 			}
 
 			//ルーム2の大きさを表す
 			if (Stage1_MapInfo_Layer1[h][w] == 2)
 			{
+
 				if (Room_LeftUpX < w)
 				{
 					Room_LeftUpX = w * BLOCK_SIZE;
@@ -125,10 +129,13 @@ void Stage1_1::Draw(int place)
 					player->GetPlayerPosX(),
 					player->GetPlayerPosY()) == true)
 				{
-					m_place = isRoom2;
+					//m_place = isCorridor;
+					camera_StaggerX = 650;
+					camera_StaggerY = 400;
 
 				}
 			}
+
 
 			//ルーム3の大きさを表す
 			if (Stage1_MapInfo_Layer1[h][w] == 3)
@@ -157,7 +164,9 @@ void Stage1_1::Draw(int place)
 					player->GetPlayerPosX(),
 					player->GetPlayerPosY()) == true)
 				{
-					m_place = isRoom3;
+					//m_place = isRoom3;
+					camera_StaggerX = 500;
+					camera_StaggerY = -500;
 
 				}
 			}
@@ -189,37 +198,36 @@ void Stage1_1::Draw(int place)
 					player->GetPlayerPosX(),
 					player->GetPlayerPosY()) == true)
 				{
-					m_place = isRoom4;
+					//m_place = isRoom4;
+					camera_StaggerX = -500;
+					camera_StaggerY = 500;
 
 				}
 			}
 
-			switch (m_place)
-			{
-			case Stage1_1::isCorridor:
-				camera_StaggerX = 0;
-				camera_StaggerY = 0;
-				break;
-			case Stage1_1::isRoom2:
-				camera_StaggerX = 650;
-				camera_StaggerY = 400;
-				break;
-			case Stage1_1::isRoom3:
-				camera_StaggerX = 500;
-				camera_StaggerY = -500;
-				break;
-			case Stage1_1::isRoom4:
-				camera_StaggerX = -500;
-				camera_StaggerY = 500;
-				break;
-			}
+			//switch (m_place)
+			//{
+			//case Stage1_1::isCorridor:
+			//	camera_StaggerX = 0;
+			//	camera_StaggerY = 0;
+			//	break;
+			//case Stage1_1::isRoom2:
+			//	camera_StaggerX = 650;
+			//	camera_StaggerY = 400;
+			//	break;
+			//case Stage1_1::isRoom3:
+			//	camera_StaggerX = 500;
+			//	camera_StaggerY = -500;
+			//	break;
+			//case Stage1_1::isRoom4:
+			//	camera_StaggerX = -500;
+			//	camera_StaggerY = 500;
+			//	break;
+			//}
 
 
 		}
 	}
-
-	place = m_place;
-	//return place;
 
 	for (int w = 0;w < MAP_WIDTH;w++)
 	{
@@ -248,9 +256,9 @@ void Stage1_1::Draw(int place)
 					h*BLOCK_SIZE + camera_StaggerY, ground_Block1, TRUE);
 			}
 
+
 		}
 	}
-
 }
 
 void Stage1_1::Finish()
