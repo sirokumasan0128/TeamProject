@@ -24,7 +24,8 @@ void Stage1_2::Update()
 		{
 
 			if (collision.Block_Collision_Up(
-				w*BLOCK_SIZE+, h*BLOCK_SIZE,
+				w*BLOCK_SIZE+stage1_2_Camera_StaggerX,
+				h*BLOCK_SIZE+stage1_2_Camera_StaggerY,
 				player->GetPlayerPosX(),
 				player->GetPlayerPosY()) == true &&
 				Stage1_MapInfo_Layer2[h][w] != 100)
@@ -33,7 +34,9 @@ void Stage1_2::Update()
 				player->SetPlayerPosY(h * BLOCK_SIZE - 64);
 
 			}
-			if (collision.Block_Collision_Bottom(w*BLOCK_SIZE, h*BLOCK_SIZE,
+			if (collision.Block_Collision_Bottom(
+				w*BLOCK_SIZE+stage1_2_Camera_StaggerX, 
+				h*BLOCK_SIZE + stage1_2_Camera_StaggerY,
 				player->GetPlayerPosX(),
 				player->GetPlayerPosY()) == true &&
 				Stage1_MapInfo_Layer2[h][w] != 100)
@@ -43,7 +46,9 @@ void Stage1_2::Update()
 
 			}
 
-			if (collision.Block_Collision_Right(w*BLOCK_SIZE, h*BLOCK_SIZE,
+			if (collision.Block_Collision_Right(
+				w*BLOCK_SIZE + stage1_2_Camera_StaggerX,
+				h*BLOCK_SIZE + stage1_2_Camera_StaggerY,
 				player->GetPlayerPosX(),
 				player->GetPlayerPosY()) == true &&
 				Stage1_MapInfo_Layer2[h][w] != 100)
@@ -52,7 +57,9 @@ void Stage1_2::Update()
 				player->SetPlayerPosX(w*BLOCK_SIZE + 32);
 			}
 
-			if (collision.Block_Collision_Left(w*BLOCK_SIZE, h*BLOCK_SIZE,
+			if (collision.Block_Collision_Left(
+				w*BLOCK_SIZE + stage1_2_Camera_StaggerX,
+				h*BLOCK_SIZE + stage1_2_Camera_StaggerY,
 				player->GetPlayerPosX(),
 				player->GetPlayerPosY()) == true &&
 				Stage1_MapInfo_Layer2[h][w] != 100)
@@ -78,10 +85,6 @@ void Stage1_2::Draw(int camera_StaggerX,int camera_StaggerY)
 	stage1_2_Camera_StaggerX = camera_StaggerX;
 	stage1_2_Camera_StaggerY = camera_StaggerY;
 
-	//DrawFormatString(500, 90, GetColor(255, 255, 255), "%d カメラずらしX", stage1_2_Camera_StaggerX);
-	//DrawFormatString(500, 105, GetColor(255, 255, 255), "%d カメラずらしY", stage1_2_Camera_StaggerY);
-	//DrawFormatString(500, 120, GetColor(255, 255, 255), "%d カメラずらしX", camera_StaggerX);
-	//DrawFormatString(500, 135, GetColor(255, 255, 255), "%d カメラずらしY", camera_StaggerY);
 
 	for (int h = 0; h < MAP_HEIGHT; h++)
 	{
@@ -99,20 +102,20 @@ void Stage1_2::Draw(int camera_StaggerX,int camera_StaggerY)
 			if (Stage1_MapInfo_Layer2[h][w] == 103)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
-				DrawGraph(w*BLOCK_SIZE,
-					h*BLOCK_SIZE, ground_Tex2, TRUE);
+				DrawGraph(w*BLOCK_SIZE + stage1_2_Camera_StaggerX,
+					h*BLOCK_SIZE + stage1_2_Camera_StaggerY, ground_Tex2, TRUE);
 			}
 			if (Stage1_MapInfo_Layer2[h][w] == 104)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
-				DrawGraph(w*BLOCK_SIZE,
-					h*BLOCK_SIZE, ground_Tex2, TRUE);
+				DrawGraph(w*BLOCK_SIZE + stage1_2_Camera_StaggerX,
+					h*BLOCK_SIZE + stage1_2_Camera_StaggerY, ground_Tex2, TRUE);
 			}
 			if (Stage1_MapInfo_Layer2[h][w] == 109)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
-				DrawGraph(w*BLOCK_SIZE,
-					h*BLOCK_SIZE, ground_Tex2, TRUE);
+				DrawGraph(w*BLOCK_SIZE + stage1_2_Camera_StaggerX,
+					h*BLOCK_SIZE + stage1_2_Camera_StaggerY, ground_Tex2, TRUE);
 			}
 
 

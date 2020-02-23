@@ -6,9 +6,12 @@ class Stage1_3
 private:
 
 	//アセットのロード用
-	int	ground_Block3;
+	int	ground_Tex3;
 
 
+	////部屋の座標ずらしよう
+	int stage1_3_Camera_StaggerX;
+	int stage1_3_Camera_StaggerY;
 
 	//マップの描画用
 	int Stage1_MapInfo_Layer3[MAP_HEIGHT][MAP_WIDTH] =
@@ -56,7 +59,7 @@ public:
 
 	void Init();
 	void Update();
-	void Draw();
+	void Draw(int camera_StaggerX, int camera_StaggerY);
 	void Finish();
 
 };
