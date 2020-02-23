@@ -30,9 +30,7 @@ void Stage1_2::Update()
 				player->GetPlayerPosY()) == true &&
 				Stage1_MapInfo_Layer2[h][w] != 100)
 			{
-
 				player->SetPlayerPosY(h * BLOCK_SIZE - 64);
-
 			}
 			if (collision.Block_Collision_Bottom(
 				w*BLOCK_SIZE+stage1_2_Camera_StaggerX, 

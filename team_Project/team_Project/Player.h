@@ -22,6 +22,11 @@ private:
 
 	bool isDead;
 
+	//プレイヤーをずらす用
+	int player_Camera_StaggerX;
+	int player_Camera_StaggerY;
+
+
 public:
 
 	Base_Actor base_Actor;
@@ -29,7 +34,7 @@ public:
 
 	void Init(int pos_X,int pos_Y);
 	void Update();
-	void Draw();
+	void Draw(int camera_StaggerX, int camera_StaggerY);
 	void Finish();
 
 	int GetPlayerPosX() { return pos_X; }

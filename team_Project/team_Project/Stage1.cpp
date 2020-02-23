@@ -30,11 +30,9 @@ void Stage1::Update()
 {
 	player->Update();
 
-
 	stage1_1.Update();
 	stage1_2.Update();
 	stage1_3.Update();
-	//DrawFormatString(500, 15, GetColor(255, 255, 255), "%d Update“à‚Ìplace", place);
 
 }
 
@@ -62,11 +60,9 @@ void Stage1::Draw()
 		break;
 	}
 
-	DrawFormatString(500, 30, GetColor(255, 255, 255), "%d Stage1‚ÌDraw“à‚Ìplace", place);
 
 	stage1_2.Draw(this->camera_StaggerX, this->camera_StaggerY);
-	//stage1_2.Draw();
-	player->Draw();
+	player->Draw(this->camera_StaggerX, this->camera_StaggerY);
 	stage1_3.Draw(this->camera_StaggerX, this->camera_StaggerY);
 }
 

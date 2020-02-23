@@ -7,11 +7,11 @@ Player::Player()
 {
 }
 
-void Player::Init( int pos_X,int pos_Y)
+void Player::Init(int pos_X, int pos_Y)
 {
 
-	Cr = (255,255,255);
-	this->pos_X= pos_X;
+	Cr = (255, 255, 255);
+	this->pos_X = pos_X;
 	this->pos_Y = pos_Y;
 
 	//p_pos_X = &this->pos_X;
@@ -49,7 +49,7 @@ void Player::Update()
 
 	pos_X = pos_X + velocity_X;
 	pos_Y = pos_Y + velocity_Y;
-	
+
 }
 
 void Player::SetPlayerPosX(int pos_X)
@@ -62,9 +62,13 @@ void Player::SetPlayerPosY(int pos_Y)
 }
 
 
-void Player::Draw()
+void Player::Draw(int camera_StaggerX, int camera_StaggerY)
 {
-	DrawGraph(pos_X, pos_Y, player_Tex, TRUE);
+	player_Camera_StaggerX = camera_StaggerX;
+	player_Camera_StaggerY = camera_StaggerY;
+
+	DrawGraph(pos_X+player_Camera_StaggerX,
+		pos_Y+player_Camera_StaggerY, player_Tex, TRUE);
 
 }
 
