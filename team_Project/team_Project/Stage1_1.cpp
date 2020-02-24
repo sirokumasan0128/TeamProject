@@ -12,7 +12,6 @@ Stage1_1::Stage1_1()
 	Room_RightDownY(MAP_HEIGHT*BLOCK_SIZE),
 	block_Draw_PositionX(0), block_Draw_PositionY(0)
 {
-	//ground_Block1 = LoadGraph("ground_Block_Sample.png");
 }
 
 void Stage1_1::Init()
@@ -38,6 +37,7 @@ int Stage1_1::camera_Stagger(int place)
 	{
 		for (int h = 0;h < MAP_HEIGHT;h++)
 		{
+			//•”‰®‚Ì‘å‚«‚³•\‚·—p‚Ì‰Šú‰»
 			Room_LeftUpX = 0;
 			Room_LeftUpY = 0;
 			Room_RightDownX = MAP_WIDTH * BLOCK_SIZE;
@@ -71,8 +71,6 @@ int Stage1_1::camera_Stagger(int place)
 					player->GetPlayerPosY()) == true)
 				{
 					m_place = isCorridor;
-					//camera_StaggerX = 0;
-					//camera_StaggerY = 0;
 
 				}
 			}
@@ -106,8 +104,6 @@ int Stage1_1::camera_Stagger(int place)
 					player->GetPlayerPosY()) == true)
 				{
 					m_place = isRoom2;
-					//camera_StaggerX = 650;
-				    //camera_StaggerY = 400;
 
 				}
 			}
@@ -141,8 +137,6 @@ int Stage1_1::camera_Stagger(int place)
 					player->GetPlayerPosY()) == true)
 				{
 					m_place = isRoom3;
-					//camera_StaggerX = 500;
-					//camera_StaggerY = -500;
 
 				}
 			}
@@ -175,13 +169,11 @@ int Stage1_1::camera_Stagger(int place)
 					player->GetPlayerPosY()) == true)
 				{
 					m_place = isRoom4;
-					//camera_StaggerX = -500;
-					//camera_StaggerY = 500;
 
 				}
 			}
 
-			switch (m_place)
+			switch (place)
 			{
 			case Stage1_1::isCorridor:
 				camera_StaggerX = 0;
@@ -205,16 +197,13 @@ int Stage1_1::camera_Stagger(int place)
 		}
 	}
 
-
+	//place‚Ém_place‚ğ‘ã“ü
+	//•¡”‰ñ‘ã“ü‚·‚é‚±‚Æ‚ª‹C‚¿ˆ«‚©‚Á‚½‚©‚ç‚Ü‚Æ‚ß‚¿‚á‚Á‚½
 	place = m_place;
-	DrawFormatString(500, 0, GetColor(255, 255, 255), "%d Stage1_1“à‚Ìplace", place);
 	return place;
 
 	   
 }
-
-
-
 
 
 void Stage1_1::Draw()

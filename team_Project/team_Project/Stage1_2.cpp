@@ -23,6 +23,7 @@ void Stage1_2::Update()
 		for (int w = 0; w < MAP_WIDTH; w++)
 		{
 
+			//プレイヤーと壁の当たり判定と位置補正
 			if (collision.Block_Collision_Up(
 				w*BLOCK_SIZE+stage1_2_Camera_StaggerX,
 				h*BLOCK_SIZE+stage1_2_Camera_StaggerY,
@@ -79,7 +80,7 @@ void Stage1_2::Stage1_Map_Hit()
 
 void Stage1_2::Draw(int camera_StaggerX,int camera_StaggerY)
 {
-
+	//描画ずらし用の値受け取り
 	stage1_2_Camera_StaggerX = camera_StaggerX;
 	stage1_2_Camera_StaggerY = camera_StaggerY;
 

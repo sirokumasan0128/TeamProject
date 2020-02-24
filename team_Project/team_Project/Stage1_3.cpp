@@ -25,6 +25,7 @@ void Stage1_3::Update()
 void Stage1_3::Draw(int camera_StaggerX, int camera_StaggerY)
 {
 
+	//•`‰æ‚¸‚ç‚µ—p‚Ì’lŽó‚¯Žæ‚è
 	stage1_3_Camera_StaggerX = camera_StaggerX;
 	stage1_3_Camera_StaggerY = camera_StaggerY;
 

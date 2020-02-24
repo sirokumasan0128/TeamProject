@@ -39,7 +39,7 @@ void Stage1::Update()
 void Stage1::Draw()
 {
 	stage1_1.Draw();
-	//stage1_1.camera_Stagger(place);
+	//•`‰æ‚¸‚ç‚µ—p‚ÌSwitch case
 	switch (stage1_1.camera_Stagger(place))
 	{
 	case Stage1::isCorridor:

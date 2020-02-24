@@ -10,21 +10,21 @@ private:
 	//プレイヤー用の変数
 	int pos_X;
 	int pos_Y;
-	int* p_pos_X;
-	int* p_pos_Y;
 	int Cr;
 	int velocity_X;
 	int velocity_Y;
-	int* p_velocity_X;
-	int* p_velocity_Y;
 	int player_Tex;
-	int* p_player_Tex;
 
 	bool isDead;
+	bool isOnce;
 
 	//プレイヤーをずらす用
 	int player_Camera_StaggerX;
 	int player_Camera_StaggerY;
+
+	//一回だけずらす用の値を代入する用
+	int stagger_InitX;
+	int stagger_InitY;
 
 
 public:
