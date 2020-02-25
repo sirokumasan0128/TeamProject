@@ -9,11 +9,6 @@ private:
 	//アセットのロード用
 	int ground_Block1;
 
-	//ブロックの描画用
-	int block_Draw_PositionX;
-	int block_Draw_PositionY;
-
-
 	//部屋の出入り判定用
 	int Room_LeftUpX;
 	int Room_LeftUpY;
@@ -23,6 +18,12 @@ private:
 	//部屋の座標ずらしよう
 	int camera_StaggerX;
 	int camera_StaggerY;
+
+	//部屋描画用フラグ
+	bool isCollider_Draw;
+	bool isRoom2_Draw;
+	bool isRoom3_Draw;
+	bool isRoom4_Draw;
 
 	//マップの描画用
 	int Stage1_MapInfo_Layer1[MAP_HEIGHT][MAP_WIDTH] =
@@ -73,7 +74,7 @@ public:
 
 
 	enum Place {
-		isCorridor,
+		isCorrider,
 		isRoom2,
 		isRoom3,
 		isRoom4,

@@ -10,7 +10,9 @@ Stage1_1::Stage1_1()
 	Room_LeftUpX(0), Room_LeftUpY(0),
 	Room_RightDownX(MAP_WIDTH*BLOCK_SIZE),
 	Room_RightDownY(MAP_HEIGHT*BLOCK_SIZE),
-	block_Draw_PositionX(0), block_Draw_PositionY(0)
+	isCollider_Draw(false),
+	isRoom2_Draw(false),isRoom3_Draw(false),
+	isRoom4_Draw(false)
 {
 }
 
@@ -18,7 +20,7 @@ void Stage1_1::Init()
 {
 	ground_Block1 = LoadGraph("ground_Block_Sample.png");
 
-	m_place = isCorridor;
+	m_place = isCorrider;
 
 }
 
@@ -70,8 +72,7 @@ int Stage1_1::camera_Stagger(int place)
 					player->GetPlayerPosX(),
 					player->GetPlayerPosY()) == true)
 				{
-					m_place = isCorridor;
-
+					m_place = isCorrider;
 				}
 			}
 
@@ -104,7 +105,6 @@ int Stage1_1::camera_Stagger(int place)
 					player->GetPlayerPosY()) == true)
 				{
 					m_place = isRoom2;
-
 				}
 			}
 
@@ -173,23 +173,19 @@ int Stage1_1::camera_Stagger(int place)
 				}
 			}
 
-			switch (place)
+			switch (m_place)
 			{
-			case Stage1_1::isCorridor:
-				camera_StaggerX = 0;
-				camera_StaggerY = 0;
+			case Stage1_1::isCorrider:
+				isCollider_Draw = true;
 				break;
 			case Stage1_1::isRoom2:
-				camera_StaggerX = 650;
-				camera_StaggerY = 400;
+				isRoom2_Draw = true;
 				break;
 			case Stage1_1::isRoom3:
-				camera_StaggerX = 500;
-				camera_StaggerY = -500;
+				isRoom3_Draw = true;
 				break;
 			case Stage1_1::isRoom4:
-				camera_StaggerX = -500;
-				camera_StaggerY = 500;
+				isRoom4_Draw = true;
 				break;
 			}
 
@@ -202,7 +198,7 @@ int Stage1_1::camera_Stagger(int place)
 	place = m_place;
 	return place;
 
-	   
+
 }
 
 
@@ -214,26 +210,26 @@ void Stage1_1::Draw()
 		for (int h = 0;h < MAP_HEIGHT;h++)
 		{
 			//下にレイヤー1のマップチップ描画を入れる
-			if (Stage1_MapInfo_Layer1[h][w] == 1)
+			if (Stage1_MapInfo_Layer1[h][w] == 1 && isCollider_Draw == true)
 			{
 
-				DrawGraph(w*BLOCK_SIZE + camera_StaggerX,
-					h*BLOCK_SIZE + camera_StaggerY, ground_Block1, TRUE);
+				DrawGraph(w*BLOCK_SIZE,
+					h*BLOCK_SIZE, ground_Block1, TRUE );
 			}
-			if (Stage1_MapInfo_Layer1[h][w] == 2)
+			if (Stage1_MapInfo_Layer1[h][w] == 2 && isRoom2_Draw == true)
 			{
-				DrawGraph(w*BLOCK_SIZE + camera_StaggerX,
-					h*BLOCK_SIZE + camera_StaggerY, ground_Block1, TRUE);
+				DrawGraph(w*BLOCK_SIZE,
+					h*BLOCK_SIZE, ground_Block1, TRUE);
 			}
-			if (Stage1_MapInfo_Layer1[h][w] == 3)
+			if (Stage1_MapInfo_Layer1[h][w] == 3 && isRoom3_Draw == true)
 			{
-				DrawGraph(w*BLOCK_SIZE + camera_StaggerX,
-					h*BLOCK_SIZE + camera_StaggerY, ground_Block1, TRUE);
+				DrawGraph(w*BLOCK_SIZE,
+					h*BLOCK_SIZE, ground_Block1, TRUE);
 			}
-			if (Stage1_MapInfo_Layer1[h][w] == 4)
+			if (Stage1_MapInfo_Layer1[h][w] == 4 && isRoom4_Draw == true)
 			{
-				DrawGraph(w*BLOCK_SIZE + camera_StaggerX,
-					h*BLOCK_SIZE + camera_StaggerY, ground_Block1, TRUE);
+				DrawGraph(w*BLOCK_SIZE,
+					h*BLOCK_SIZE, ground_Block1, TRUE);
 			}
 
 

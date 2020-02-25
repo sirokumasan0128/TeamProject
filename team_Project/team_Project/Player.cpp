@@ -7,6 +7,7 @@ Player::Player()
 	:player_Tex(0), velocity_X(0), velocity_Y(0),
 	isDead(false),isOnce(false),
 	stagger_InitX(0), stagger_InitY(0)
+
 {
 }
 
@@ -28,17 +29,6 @@ void Player::Init(int pos_X, int pos_Y)
 
 void Player::Update()
 {
-	//プレイヤーの1フレーム前の状態を入れる。
-	if (player_Camera_StaggerX != stagger_InitX)
-	{
-		//プレイヤーの座標ずらしを現在位置に足し算
-		pos_X += player_Camera_StaggerX;
-		pos_Y += player_Camera_StaggerY;
-
-		//ここで代入することで処理を通らなくする。何故か2回目以降も通らない。
-		stagger_InitX = player_Camera_StaggerX;
-		stagger_InitY = player_Camera_StaggerX;
-	}
 
 	//プレイヤーの移動処理初期化
 	velocity_X = 0;
@@ -64,10 +54,6 @@ void Player::Update()
 		velocity_Y += 6;
 	}
 
-	//プレイヤーの描画すらし確認用
-	DrawFormatString(500, 30, Cr, "%d　player_Update内の描画ずらしX", player_Camera_StaggerX);
-	DrawFormatString(500, 45, Cr, "%d　player_Update内の描画ずらしY", player_Camera_StaggerY);
-
 
 	//プレイヤーの移動
 	pos_X = pos_X + velocity_X;
@@ -87,15 +73,8 @@ void Player::SetPlayerPosY(int pos_Y)
 }
 
 
-void Player::Draw(int camera_StaggerX, int camera_StaggerY)
+void Player::Draw()
 {
-	//プレイヤー用の描画ずらしを代入
-	player_Camera_StaggerX = camera_StaggerX;
-	player_Camera_StaggerY = camera_StaggerY;
-
-	//描画ずらしの確認用
-	DrawFormatString(500, 0, Cr, "%d　player_Draw内の描画ずらしX", player_Camera_StaggerX);
-	DrawFormatString(500, 15, Cr, "%d　player_Draw内の描画ずらしY", player_Camera_StaggerY);
 
 	//プレイヤーの描画
 	DrawGraph(pos_X,pos_Y, player_Tex, TRUE);

@@ -4,8 +4,10 @@
 Stage1::Stage1()
 	:player(new Player()),
 	camera_StaggerX(0),
-	camera_StaggerY(0),place(isCorridor)
-{
+	camera_StaggerY(0), place(isCorridor),
+	isCollider_Draw(false),isRoom2_Draw(false),
+	isRoom3_Draw(false),isRoom4_Draw(false)
+{	
 	//‰Šú’l“ü—Í
 	pos_X = 300;
 	pos_Y = 420;
@@ -39,31 +41,30 @@ void Stage1::Update()
 void Stage1::Draw()
 {
 	stage1_1.Draw();
+
 	//•`‰æ‚¸‚ç‚µ—p‚ÌSwitch case
 	switch (stage1_1.camera_Stagger(place))
 	{
 	case Stage1::isCorridor:
-		camera_StaggerX = 0;
-		camera_StaggerY = 0;
+		isCollider_Draw = true;
 		break;
 	case Stage1::isRoom2:
-		camera_StaggerX = 650;
-		camera_StaggerY = 400;
+		isRoom2_Draw = true;
 		break;
 	case Stage1::isRoom3:
-		camera_StaggerX = 500;
-		camera_StaggerY = -500;
+		isRoom3_Draw = true;
 		break;
 	case Stage1::isRoom4:
-		camera_StaggerX = -500;
-		camera_StaggerY = 500;
+		isRoom4_Draw = true;
 		break;
 	}
 
 
-	stage1_2.Draw(this->camera_StaggerX, this->camera_StaggerY);
-	player->Draw(this->camera_StaggerX, this->camera_StaggerY);
-	stage1_3.Draw(this->camera_StaggerX, this->camera_StaggerY);
+	stage1_2.Draw(this->isCollider_Draw,this->isRoom2_Draw,
+		this->isRoom3_Draw,this->isRoom4_Draw);
+	player->Draw();
+	stage1_3.Draw(this->isCollider_Draw, this->isRoom2_Draw,
+		this->isRoom3_Draw, this->isRoom4_Draw);
 }
 
 void Stage1::Finish()

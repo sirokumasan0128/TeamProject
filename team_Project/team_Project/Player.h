@@ -34,7 +34,7 @@ public:
 
 	void Init(int pos_X,int pos_Y);
 	void Update();
-	void Draw(int camera_StaggerX, int camera_StaggerY);
+	void Draw();
 	void Finish();
 
 	int GetPlayerPosX() { return pos_X; }

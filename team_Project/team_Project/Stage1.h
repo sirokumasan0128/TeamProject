@@ -12,6 +12,12 @@ private:
 	int pos_X;//playerに渡す用
 	int pos_Y;//playerに渡す用
 
+	//部屋描画用フラグ
+	bool isCollider_Draw;
+	bool isRoom2_Draw;
+	bool isRoom3_Draw;
+	bool isRoom4_Draw;
+
 
 public:
 	Stage1();
@@ -22,6 +28,8 @@ public:
 	void Draw();
 	void Finish();
 
+
+
 	enum Place {
 		isCorridor,
 		isRoom2,
@@ -29,15 +37,15 @@ public:
 		isRoom4,
 	};
 
-	 
-	
 	Place place;
 	Place e_place;
-
+	 
 	int camera_StaggerX;//ステージずらす用X
 	int camera_StaggerY;//ステージずらす用Y
 
+
 	Player* player;
+
 
 	Stage1* stage1;
 	Stage1_1 stage1_1;

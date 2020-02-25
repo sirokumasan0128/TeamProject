@@ -5,7 +5,7 @@
 using namespace std;
 
 Stage1_2::Stage1_2()
-	:stage1_2_Camera_StaggerX(0),stage1_2_Camera_StaggerY(0),
+	:stage1_2_Camera_StaggerX(0), stage1_2_Camera_StaggerY(0), 
 	ground_Tex2(0)
 {
 }
@@ -25,8 +25,8 @@ void Stage1_2::Update()
 
 			//プレイヤーと壁の当たり判定と位置補正
 			if (collision.Block_Collision_Up(
-				w*BLOCK_SIZE+stage1_2_Camera_StaggerX,
-				h*BLOCK_SIZE+stage1_2_Camera_StaggerY,
+				w*BLOCK_SIZE,
+				h*BLOCK_SIZE,
 				player->GetPlayerPosX(),
 				player->GetPlayerPosY()) == true &&
 				Stage1_MapInfo_Layer2[h][w] != 100)
@@ -34,8 +34,8 @@ void Stage1_2::Update()
 				player->SetPlayerPosY(h * BLOCK_SIZE - 64);
 			}
 			if (collision.Block_Collision_Bottom(
-				w*BLOCK_SIZE+stage1_2_Camera_StaggerX, 
-				h*BLOCK_SIZE + stage1_2_Camera_StaggerY,
+				w*BLOCK_SIZE, 
+				h*BLOCK_SIZE ,
 				player->GetPlayerPosX(),
 				player->GetPlayerPosY()) == true &&
 				Stage1_MapInfo_Layer2[h][w] != 100)
@@ -46,8 +46,8 @@ void Stage1_2::Update()
 			}
 
 			if (collision.Block_Collision_Right(
-				w*BLOCK_SIZE + stage1_2_Camera_StaggerX,
-				h*BLOCK_SIZE + stage1_2_Camera_StaggerY,
+				w*BLOCK_SIZE ,
+				h*BLOCK_SIZE,
 				player->GetPlayerPosX(),
 				player->GetPlayerPosY()) == true &&
 				Stage1_MapInfo_Layer2[h][w] != 100)
@@ -57,8 +57,8 @@ void Stage1_2::Update()
 			}
 
 			if (collision.Block_Collision_Left(
-				w*BLOCK_SIZE + stage1_2_Camera_StaggerX,
-				h*BLOCK_SIZE + stage1_2_Camera_StaggerY,
+				w*BLOCK_SIZE,
+				h*BLOCK_SIZE ,
 				player->GetPlayerPosX(),
 				player->GetPlayerPosY()) == true &&
 				Stage1_MapInfo_Layer2[h][w] != 100)
@@ -78,11 +78,9 @@ void Stage1_2::Stage1_Map_Hit()
 
 }
 
-void Stage1_2::Draw(int camera_StaggerX,int camera_StaggerY)
+void Stage1_2::Draw(bool isCollider_Draw, bool isRoom2_Draw,
+	bool isRoom3_Draw, bool isRoom4_Draw)
 {
-	//描画ずらし用の値受け取り
-	stage1_2_Camera_StaggerX = camera_StaggerX;
-	stage1_2_Camera_StaggerY = camera_StaggerY;
 
 
 	for (int h = 0; h < MAP_HEIGHT; h++)
@@ -91,30 +89,31 @@ void Stage1_2::Draw(int camera_StaggerX,int camera_StaggerY)
 		{
 			//vector<int> Block_Position = { w*BLOCK_SIZE,h*BLOCK_SIZE };
 
+			if (Stage1_MapInfo_Layer2[h][w] == 101 && isCollider_Draw == true)
+			{
+				//下にレイヤー1のマップチップの描画用を入れる
+				DrawGraph(w*BLOCK_SIZE,
+					h*BLOCK_SIZE, ground_Tex2, TRUE);
 
-			if (Stage1_MapInfo_Layer2[h][w] == 102)
-			{
-				//下にレイヤー1のマップチップの描画用を入れる
-				DrawGraph(w*BLOCK_SIZE + stage1_2_Camera_StaggerX ,
-					h*BLOCK_SIZE + stage1_2_Camera_StaggerY, ground_Tex2, TRUE);
 			}
-			if (Stage1_MapInfo_Layer2[h][w] == 103)
+
+			if (Stage1_MapInfo_Layer2[h][w] == 102 && isRoom2_Draw)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
-				DrawGraph(w*BLOCK_SIZE + stage1_2_Camera_StaggerX,
-					h*BLOCK_SIZE + stage1_2_Camera_StaggerY, ground_Tex2, TRUE);
+				DrawGraph(w*BLOCK_SIZE ,
+					h*BLOCK_SIZE , ground_Tex2, TRUE);
 			}
-			if (Stage1_MapInfo_Layer2[h][w] == 104)
+			if (Stage1_MapInfo_Layer2[h][w] == 103 && isRoom3_Draw)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
-				DrawGraph(w*BLOCK_SIZE + stage1_2_Camera_StaggerX,
-					h*BLOCK_SIZE + stage1_2_Camera_StaggerY, ground_Tex2, TRUE);
+				DrawGraph(w*BLOCK_SIZE,
+					h*BLOCK_SIZE , ground_Tex2, TRUE);
 			}
-			if (Stage1_MapInfo_Layer2[h][w] == 109)
+			if (Stage1_MapInfo_Layer2[h][w] == 104 && isRoom4_Draw)
 			{
 				//下にレイヤー1のマップチップの描画用を入れる
-				DrawGraph(w*BLOCK_SIZE + stage1_2_Camera_StaggerX,
-					h*BLOCK_SIZE + stage1_2_Camera_StaggerY, ground_Tex2, TRUE);
+				DrawGraph(w*BLOCK_SIZE ,
+					h*BLOCK_SIZE , ground_Tex2, TRUE);
 			}
 
 
