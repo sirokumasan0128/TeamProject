@@ -14,7 +14,7 @@ Stage1::Stage1()
 	pos_Y = 420;
 	player->Init(pos_X, pos_Y);
 
-	enemy_Number;
+	enemy_Number = 1;
 	enemy_1->Init(enemy_Number);
 
 	stage1_1.Init();
@@ -25,9 +25,9 @@ Stage1::Stage1()
 	stage1_1.setPlayer(player);
 	//stage1_2にプレイヤーの値を渡す
 	stage1_2.setPlayer(player);
+	//stage1_2にエネミーの値を渡す
+	stage1_2.setEnemy_1(enemy_1);
 
-	//stage1_3にエネミーの値を渡す
-	//stage1_3.
 
 }
 

@@ -24,5 +24,11 @@ public:
 	void Update();
 	void Draw();
 	void Finsh();
+
+	int GetEnemy_1PosX() { return pos_X; }
+	void SetEnemy_1PosX(int pos_X);
+	int GetEnemy_1PosY() { return pos_Y; }
+	void SetEnemy_1PosY(int pos_Y);
+
 };
 

@@ -2,6 +2,7 @@
 #include"Base_Scene.h"
 #include"Collision.h"
 #include "Player.h"
+#include "Enemy_1.h"
 //#include "Stage1.h"
 #include "Stage1_1.h"
 
@@ -68,6 +69,7 @@ public:
 
 	Collision collision;
 	Player* player;
+	Enemy_1* enemy_1;
 	Stage1_1 stage1_1;
 
 	void Init();
@@ -79,7 +81,7 @@ public:
 	void Finish();
 
 	void setPlayer(Player* p_2);
-
+	void setEnemy_1(Enemy_1*e_2);
 
 };
 

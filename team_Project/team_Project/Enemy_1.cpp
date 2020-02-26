@@ -39,6 +39,16 @@ void Enemy_1::Finsh()
 
 }
 
+void Enemy_1::SetEnemy_1PosX(int pos_X)
+{
+	this->pos_X = pos_X;
+}
+void Enemy_1::SetEnemy_1PosY(int pos_Y)
+{
+	this->pos_Y = pos_Y;
+}
+
+
 Enemy_1::~Enemy_1()
 {
 }

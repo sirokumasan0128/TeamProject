@@ -5,13 +5,13 @@
 using namespace std;
 
 Stage1_2::Stage1_2()
-	:stage1_2_Camera_StaggerX(0), stage1_2_Camera_StaggerY(0), 
-	ground_Tex2(0)
+	:ground_Tex2(0)
 {
 }
 
 void Stage1_2::Init()
 {
+	//‚±‚±‚É•K—v‚È‰æ‘œ‚Ì–¼‘O‚ð“ü‚ê‚Ä‚¢‚Á‚Ä‚Ë
 	ground_Tex2 = LoadGraph("ground_Block_Sample2.png");
 
 }
@@ -133,6 +133,10 @@ void Stage1_2::setPlayer(Player * p_2)
 	player = p_2;
 }
 
+void Stage1_2::setEnemy_1(Enemy_1*e_2)
+{
+	enemy_1 = e_2;
+}
 
 Stage1_2::~Stage1_2()
 {

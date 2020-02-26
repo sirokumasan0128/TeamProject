@@ -35,6 +35,7 @@ void Player::Init(int pos_X, int pos_Y)
 	velocity_X = 0;
 	velocity_Y = 0;
 	isDead = false;
+	draw_Direction = RIGHT;
 }
 
 void Player::Update()

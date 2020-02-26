@@ -44,6 +44,8 @@ public:
 
 	Base_Actor base_Actor;
 	
+	Player();
+	~Player();
 
 	void Init(int pos_X,int pos_Y);
 	void Update();
@@ -57,7 +59,5 @@ public:
 
 	
 
-	Player();
-	~Player();
 };
 
