@@ -27,7 +27,7 @@ Stage1::Stage1()
 	stage1_2.setPlayer(player);
 
 	//stage1_3にエネミーの値を渡す
-	stage1_3.
+	//stage1_3.
 
 }
 

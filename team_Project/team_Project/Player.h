@@ -13,7 +13,12 @@ private:
 	int Cr;
 	int velocity_X;
 	int velocity_Y;
-	int player_Tex;
+
+	//プレイヤー用の向き別テクスチャ変数
+	int player_Front_Tex;
+	int player_Left_Tex;
+	int player_Right_Tex;
+	int player_Back_Tex;
 
 	bool isDead;
 	bool isOnce;
@@ -26,6 +31,14 @@ private:
 	int stagger_InitX;
 	int stagger_InitY;
 
+	enum Draw_Direction{
+		FRONT,
+		LEFT,
+		RIGHT,
+		BACK,
+	};
+
+	Draw_Direction draw_Direction;
 
 public:
 
