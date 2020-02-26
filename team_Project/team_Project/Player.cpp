@@ -1,6 +1,6 @@
 #include<DxLib.h>
 #include "Player.h"
-#include "Scene_Manager.h"
+//#include "Scene_Manager.h"
 
 
 Player::Player()

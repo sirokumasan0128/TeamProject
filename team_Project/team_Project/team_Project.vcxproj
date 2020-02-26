@@ -127,6 +127,7 @@
     <ClCompile Include="Base_Actor.cpp" />
     <ClCompile Include="Base_Scene.cpp" />
     <ClCompile Include="Collision.cpp" />
+    <ClCompile Include="Enemy_1.cpp" />
     <ClCompile Include="KeyInput.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Player.cpp" />
@@ -142,6 +143,7 @@
     <ClInclude Include="Base_Actor.h" />
     <ClInclude Include="Base_Scene.h" />
     <ClInclude Include="Collision.h" />
+    <ClInclude Include="Enemy_1.h" />
     <ClInclude Include="KeyInput.h" />
     <ClInclude Include="Player.h" />
     <ClInclude Include="Scene_Manager.h" />

@@ -84,6 +84,9 @@
     <ClCompile Include="..\..\..\team_Project仕様\a\Vector2.cpp">
       <Filter>ソース ファイル\Utility.cpp</Filter>
     </ClCompile>
+    <ClCompile Include="Enemy_1.cpp">
+      <Filter>ソース ファイル\Actor.cpp</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Base_Scene.h">
@@ -121,6 +124,9 @@
     </ClInclude>
     <ClInclude Include="..\..\..\team_Project仕様\a\Vector2.h">
       <Filter>ヘッダー ファイル\Utility.h</Filter>
+    </ClInclude>
+    <ClInclude Include="Enemy_1.h">
+      <Filter>ヘッダー ファイル\Actor.h</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
