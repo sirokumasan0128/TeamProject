@@ -1,5 +1,6 @@
 #pragma once
 #include "Base_Scene.h"
+#include "Enemy_1.h"
 
 class Stage1_3 
 {
@@ -63,6 +64,11 @@ public:
 	void Draw(bool isCollider_Draw, bool isRoom2_Draw,
 		bool isRoom3_Draw, bool isRoom4_Draw);
 	void Finish();
+
+	Enemy_1* enemy;
+
+	void setEnemy(Enemy_1* e_3);
+
 
 };
 

@@ -1,6 +1,7 @@
 #pragma once
 #include"Base_Scene.h"
 #include"Player.h"
+#include"Enemy_1.h"
 #include"Stage1.h"
 #include"Stage1_1.h"
 #include"Stage1_2.h"
@@ -9,8 +10,12 @@ class Stage1:public Base_Scene
 {
 private:
 
+	//プレイヤーの初期値決め用
 	int pos_X;//playerに渡す用
 	int pos_Y;//playerに渡す用
+
+	//エネミーの初期値決め用
+	int enemy_Number;
 
 	//部屋描画用フラグ
 	bool isCollider_Draw;
@@ -45,7 +50,7 @@ public:
 
 
 	Player* player;
-
+	Enemy_1* enemy_1;
 
 	Stage1* stage1;
 	Stage1_1 stage1_1;

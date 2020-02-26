@@ -3,6 +3,7 @@
 
 Stage1::Stage1()
 	:player(new Player()),
+	enemy_1(new Enemy_1()),
 	camera_StaggerX(0),
 	camera_StaggerY(0), place(isCorridor),
 	isCollider_Draw(false),isRoom2_Draw(false),
@@ -13,14 +14,21 @@ Stage1::Stage1()
 	pos_Y = 420;
 	player->Init(pos_X, pos_Y);
 
+	enemy_Number;
+	enemy_1->Init(enemy_Number);
+
 	stage1_1.Init();
 	stage1_2.Init();
 	stage1_3.Init();
 
-	//stage1_1にプレイヤーの値が渡る
+	//stage1_1にプレイヤーの値を渡す
 	stage1_1.setPlayer(player);
-	//stage1_2にプレイヤーの値が渡る
+	//stage1_2にプレイヤーの値を渡す
 	stage1_2.setPlayer(player);
+
+	//stage1_3にエネミーの値を渡す
+	stage1_3.
+
 }
 
 void Stage1::Init()
@@ -31,6 +39,7 @@ void Stage1::Init()
 void Stage1::Update()
 {
 	player->Update();
+	enemy_1->Update();
 
 	stage1_1.Update();
 	stage1_2.Update();
@@ -63,6 +72,7 @@ void Stage1::Draw()
 	stage1_2.Draw(this->isCollider_Draw,this->isRoom2_Draw,
 		this->isRoom3_Draw,this->isRoom4_Draw);
 	player->Draw();
+	enemy_1->Draw();
 	stage1_3.Draw(this->isCollider_Draw, this->isRoom2_Draw,
 		this->isRoom3_Draw, this->isRoom4_Draw);
 }
@@ -75,4 +85,5 @@ void Stage1::Finish()
 Stage1::~Stage1()
 {
 	delete(player);
+	delete(enemy_1);
 }
